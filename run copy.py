@@ -4,7 +4,7 @@ from soniox.speech_service import SpeechClient, Result
 from soniox.transcribe_live import transcribe_microphone
 from sales_gpt import SalesGPT
 from langchain.chat_models import ChatOpenAI
-from elevenlabs import generate, play, set_api_key, stream
+from elevenlabs import stream
 from typing import List, Tuple
 import time
 from scipy.io import wavfile
@@ -13,8 +13,10 @@ from pydub import AudioSegment
 import numpy as np
 import requests
 from pydub import AudioSegment
-from pydub.playback import play as pydub_play
 import threading
+import cProfile
+import io 
+import pstats
 
 os.environ['OPENAI_API_KEY'] = "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"
 os.environ['SONIOX_API_KEY'] = "f7d0f5e9c111971168b9f9729048bc01ca16843a7fc50db9ca589d09b1c84318"
@@ -23,8 +25,6 @@ os.environ['ELEVEN_API_KEY'] = "0ddc8db042045085b262085b0acc096a"
 agent_is_speaking = False
 
 
-        
-        
 def add_silence_to_wav(wav_bytes, silence_duration = 0.5):
     fs_original, wav_data_original = wavfile.read(BytesIO(wav_bytes))
     silence_length = int(fs_original * silence_duration)
@@ -165,4 +165,18 @@ def main():
         agent_response_thread.join()
 
 if __name__ == "__main__":
+    # Run the profiler
+    profiler = cProfile.Profile()
+    profiler.enable()
+
+    # Call the function you want to profile
     main()
+    
+    # Stop the profiler
+    profiler.disable()
+    s = io.StringIO()
+    ps = pstats.Stats(profiler, stream=s).sort_stats('tottime')
+    ps.print_stats()
+
+    with open('stats.txt', 'w+') as f:
+        f.write(s.getvalue())
