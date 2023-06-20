@@ -112,9 +112,10 @@ def render_non_final_words(words:List[str])->None:
     line = " ".join(words)
     print(f"Transcribing:{line}", end="\r")
 
+import langchain
+from langchain.cache import InMemoryCache
+langchain.llm_cache = InMemoryCache()
 
-
-        
 def main():
     # Initialize conversation
     llm = ChatOpenAI(temperature=0.9)
