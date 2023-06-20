@@ -1,5 +1,4 @@
 import os
-import threading
 from soniox.speech_service import SpeechClient, Result
 from soniox.transcribe_live import transcribe_microphone
 from sales_gpt import SalesGPT
@@ -13,7 +12,6 @@ from pydub import AudioSegment
 import numpy as np
 import requests
 from pydub import AudioSegment
-import threading
 import cProfile
 import io 
 import pstats
@@ -72,7 +70,7 @@ def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model
     if response.status_code == 200:
         # Create a BytesIO buffer to store audio data
         audio_data = BytesIO()
-        for chunk in response.iter_content(chunk_size=2048):
+        for chunk in response.iter_content(chunk_size=512):
             if chunk:
                 audio_data.write(chunk)
 
@@ -126,7 +124,7 @@ def main():
     with SpeechClient() as client:
 
         count = 0
-        max_num_turns = 1
+        max_num_turns = 4
 
         while count != max_num_turns:
             # Agent speaks
@@ -134,16 +132,14 @@ def main():
             sales_agent.step()
             agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
             print("Agent response:", agent_response)
-
-            agent_response_thread = threading.Thread(target=play_agent_response, args=(agent_response, ))
-            agent_response_thread.start()
+            play_agent_response(agent_response)
 
             # User speaks
             final_words = []
             print("Transcribing from your microphone...")
 
             while agent_is_speaking:
-                time.sleep(0.01)
+                time.sleep(0.001)
 
             for result in transcribe_microphone(client):
                 new_final_words, non_final_words = split_words(result)
@@ -151,7 +147,6 @@ def main():
                 render_final_words(final_words)
                 render_non_final_words(non_final_words)
 
-                h = " ".join(w.text for w in result.words)
 
                 if len(final_words) > 2:
                     sales_agent.human_step(" ".join(final_words).strip())
@@ -162,7 +157,7 @@ def main():
                 print('Sales Agent determined it is time to end the conversation.')
                 break
 
-        agent_response_thread.join()
+
 
 if __name__ == "__main__":
     # Run the profiler
@@ -178,5 +173,5 @@ if __name__ == "__main__":
     ps = pstats.Stats(profiler, stream=s).sort_stats('tottime')
     ps.print_stats()
 
-    with open('stats_2.txt', 'w+') as f:
+    with open('stats.txt', 'w+') as f:
         f.write(s.getvalue())
