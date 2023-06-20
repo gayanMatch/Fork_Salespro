@@ -16,17 +16,13 @@ from pydub import AudioSegment
 from pydub.playback import play as pydub_play
 import threading
 
-os.environ['OPENAI_API_KEY'] = "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"
+os.environ['OPENAI_API_KEY'] = "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"
 os.environ['SONIOX_API_KEY'] = "f7d0f5e9c111971168b9f9729048bc01ca16843a7fc50db9ca589d09b1c84318"
 os.environ['ELEVEN_API_KEY'] = "0ddc8db042045085b262085b0acc096a"
 
 agent_is_speaking = False
 
 
-def play_silent_audio():
-    silent_audio = AudioSegment.silent(duration=10000)  # 10 seconds of silence
-    while True:
-        pydub_play(silent_audio)
         
         
 def add_silence_to_wav(wav_bytes, silence_duration = 0.5):
@@ -93,10 +89,9 @@ def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model
 
     agent_is_speaking = False
 
-def split_words(result: Result) -> Tuple[List[str], List[str]]:
-    final_words = []
-    non_final_words = []
-
+def split_words(result:Result)->Tuple[List[str], List[str]]:
+    """Split the words in a result into final and non-final words"""
+    final_words, non_final_words = [], []
     for word in result.words:
         if word.is_final:
             final_words.append(word.text)
@@ -105,107 +100,69 @@ def split_words(result: Result) -> Tuple[List[str], List[str]]:
     return final_words, non_final_words
 
 
-def render_final_words(words: List[str]) -> None:
-    if len(words) > 0:
-        line = " ".join(words)
-        print(f"User input: {line}")
+def render_final_words(words:List[str])->None:
+    """Render the final words in a result"""
+    if not words:
+        return
+    line = " ".join(words)
+    print(f"User Input:{line}")
 
+def render_non_final_words(words:List[str])->None:
+    """Render the non-final words in a result"""
+    if not words:
+        return
+    line = " ".join(words)
+    print(f"Transcribing:{line}", end="\r")
 
-def render_non_final_words(words: List[str]) -> None:
-    if len(words) > 0:
-        line = " ".join(words)
-        print(f"Transcribing: {line}", end="\r")
-
-
-# def transcribe_and_send(client, sales_agent):
-#     global agent_is_speaking
-#     final_words = []
-
-#     pa = pyaudio.PyAudio()
-#     sample_rate = 16000
-#     block_size = int(sample_rate * 0.3)
-
-#     stream = pa.open(format=pyaudio.paInt16,
-#                      channels=1,
-#                      rate=sample_rate,
-#                      input=True,
-#                      frames_per_buffer=block_size)
-
-#     try:
-#         while True:
-#             if agent_is_speaking:
-#                 continue
-
-#             captured_audio = stream.read(block_size)
-#             input_audio = bytes(captured_audio)
-#             result = client.transcribe_audio(input_audio, sample_rate)
-
-#             new_final_words, non_final_words = split_words(result)
-#             final_words += new_final_words
-#             render_final_words(final_words)
-#             render_non_final_words(non_final_words)
-
-#             if len(final_words) > 2:
-#                 user_input = " ".join(final_words).strip()
-#                 sales_agent.human_step(user_input)
-#                 print(f"User input sent to agent: {user_input}")
-#                 break
-#     finally:
-#         stream.stop_stream()
-#         stream.close()
-#         pa.terminate()
 
 
         
 def main():
-    background_sound_thread = threading.Thread(target=play_silent_audio)
-    background_sound_thread.setDaemon(True)
-    background_sound_thread.start()
-
+    # Initialize conversation
     llm = ChatOpenAI(temperature=0.9)
     sales_agent = SalesGPT.from_llm(llm)
 
-    count = 0
-    max_num_turns = 10
-    non_final_word_limit = 4
-    time_limit = 6
-
+    # Initialize SpeechClient and transcriber
     with SpeechClient() as client:
-        print("Transcribing from your microphone...")
+
+        count = 0
+        max_num_turns = 4
+
         while count != max_num_turns:
+            # Agent speaks
             count += 1
-            try:
-                sales_agent.step()
-                agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
-                print("Agent response:", agent_response)
+            sales_agent.step()
+            agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
+            print("Agent response:", agent_response)
 
-                agent_response_thread = threading.Thread(target=play_agent_response, args=(agent_response, ))
-                agent_response_thread.start()
+            agent_response_thread = threading.Thread(target=play_agent_response, args=(agent_response, ))
+            agent_response_thread.start()
 
-                agent_response_thread.join()
+            # User speaks
+            final_words = []
+            print("Transcribing from your microphone...")
 
-                start_time = time.time()
-                running_non_final_words = []
-                for result in transcribe_microphone(client):
-                    if agent_is_speaking:
-                        continue
+            while agent_is_speaking:
+                time.sleep(0.01)
 
-                    new_final_words, non_final_words = split_words(result)
-                    running_non_final_words += non_final_words
-                    render_final_words(new_final_words)
-                    render_non_final_words(non_final_words)
+            for result in transcribe_microphone(client):
+                new_final_words, non_final_words = split_words(result)
+                final_words += new_final_words
+                render_final_words(final_words)
+                render_non_final_words(non_final_words)
 
-                    elapsed_time = time.time() - start_time
-                    if len(running_non_final_words) >= non_final_word_limit or elapsed_time >= time_limit:
-                        user_input = " ".join(running_non_final_words).strip()
-                        sales_agent.human_step(user_input)
-                        print(f"User input sent to agent: {user_input}")
-                        break
-            except RuntimeError as e:
-                if 'cannot dereference null pointer' in str(e.args):
-                    print("Restarting transcribe session due to error")
-                else:
-                    raise e
-   
+                h = " ".join(w.text for w in result.words)
+
+                if len(final_words) > 2:
+                    sales_agent.human_step(" ".join(final_words).strip())
+                    print(f"User input sent to agent: {' '.join(final_words).strip()}")
+                    break
+
+            if '<END_OF_CALL>' in agent_response:
+                print('Sales Agent determined it is time to end the conversation.')
+                break
+
+        agent_response_thread.join()
+
 if __name__ == "__main__":
     main()
