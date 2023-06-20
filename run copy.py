@@ -25,7 +25,7 @@ os.environ['ELEVEN_API_KEY'] = "0ddc8db042045085b262085b0acc096a"
 agent_is_speaking = False
 
 
-def add_silence_to_wav(wav_bytes, silence_duration = 0.5):
+def add_silence_to_wav(wav_bytes, silence_duration = 0.05):
     fs_original, wav_data_original = wavfile.read(BytesIO(wav_bytes))
     silence_length = int(fs_original * silence_duration)
     silence_padding = np.zeros(silence_length)
@@ -72,7 +72,7 @@ def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model
     if response.status_code == 200:
         # Create a BytesIO buffer to store audio data
         audio_data = BytesIO()
-        for chunk in response.iter_content(chunk_size=1024):
+        for chunk in response.iter_content(chunk_size=2048):
             if chunk:
                 audio_data.write(chunk)
 
@@ -126,7 +126,7 @@ def main():
     with SpeechClient() as client:
 
         count = 0
-        max_num_turns = 4
+        max_num_turns = 1
 
         while count != max_num_turns:
             # Agent speaks
@@ -178,5 +178,5 @@ if __name__ == "__main__":
     ps = pstats.Stats(profiler, stream=s).sort_stats('tottime')
     ps.print_stats()
 
-    with open('stats.txt', 'w+') as f:
+    with open('stats_2.txt', 'w+') as f:
         f.write(s.getvalue())
