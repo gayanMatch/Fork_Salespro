@@ -5,7 +5,7 @@ from functools import wraps
 logger = logging.getLogger(__name__)
 
 stream_handler = logging.StreamHandler()
-log_filename='output.log'
+log_filename='data/logs/output.log'
 file_handler = logging.FileHandler(filename=log_filename)
 handlers = [stream_handler, file_handler]
 
