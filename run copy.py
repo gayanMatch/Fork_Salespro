@@ -174,5 +174,5 @@ if __name__ == "__main__":
     ps = pstats.Stats(profiler, stream=s).sort_stats('tottime')
     ps.print_stats()
 
-    with open('stats.txt', 'w+') as f:
+    with open('data/code_profiling/stats_soniox.txt', 'w+') as f:
         f.write(s.getvalue())
