@@ -1,7 +1,7 @@
 import os
 from soniox.speech_service import SpeechClient, Result
 from soniox.transcribe_live import transcribe_microphone
-from sales_gpt import SalesGPT
+from helpers.sales_gpt import SalesGPT
 from langchain.chat_models import ChatOpenAI
 from elevenlabs import stream
 from typing import List, Tuple
@@ -15,6 +15,11 @@ from pydub import AudioSegment
 import cProfile
 import io 
 import pstats
+import langchain
+from langchain.cache import InMemoryCache
+
+# Caching the responses in LLM memory
+langchain.llm_cache = InMemoryCache()
 
 os.environ['OPENAI_API_KEY'] = "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"
 os.environ['SONIOX_API_KEY'] = "f7d0f5e9c111971168b9f9729048bc01ca16843a7fc50db9ca589d09b1c84318"
@@ -112,9 +117,6 @@ def render_non_final_words(words:List[str])->None:
     line = " ".join(words)
     print(f"Transcribing:{line}", end="\r")
 
-import langchain
-from langchain.cache import InMemoryCache
-langchain.llm_cache = InMemoryCache()
 
 def main():
     # Initialize conversation
