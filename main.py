@@ -17,14 +17,20 @@ import io
 import pstats
 import langchain
 from langchain.cache import InMemoryCache
+from dotenv import load_dotenv
+
+# load environment variables
+load_dotenv(dotenv_path="configs/.env", override=True, verbose=True)
 
 # Caching the responses in LLM memory
 langchain.llm_cache = InMemoryCache()
 
-os.environ['OPENAI_API_KEY'] = "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"
-os.environ['SONIOX_API_KEY'] = "f7d0f5e9c111971168b9f9729048bc01ca16843a7fc50db9ca589d09b1c84318"
-os.environ['ELEVEN_API_KEY'] = "0ddc8db042045085b262085b0acc096a"
+# importing the environment variables in a more safe way 
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+SONIOX_API_KEY = os.getenv("SONIOX_API_KEY")
+ELEVEN_API_KEY = os.getenv("ELEVEN_API_KEY")
 
+# define global variables
 agent_is_speaking = False
 
 
@@ -46,7 +52,6 @@ def convert_mp3_to_wav(mp3_bytes):
     output_buf = BytesIO()
     mp3_audio.export(output_buf, format="wav")
     output_buf.seek(0)
-    
     return output_buf.read()
 
 

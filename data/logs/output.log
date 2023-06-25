@@ -1,0 +1,35 @@
+helpers.logger 2023-06-26 02:47:18,264 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:47:18,265 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:47:18,265 - INFO - Running from_llm: --- 0.0009980201721191406 seconds ---
+helpers.logger 2023-06-26 02:47:18,553 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:47:18,554 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:47:18,554 - INFO - Running from_llm: --- 0.0009980201721191406 seconds ---
+openai 2023-06-26 02:47:19,348 - INFO - error_code=invalid_api_key error_message='Incorrect API key provided: sk-D2NSs***************************************enUe. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+helpers.logger 2023-06-26 02:47:48,474 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:47:48,474 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:47:48,474 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:47:48,602 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:47:48,603 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:47:48,603 - INFO - Running from_llm: --- 0.00099945068359375 seconds ---
+openai 2023-06-26 02:47:49,350 - INFO - error_code=invalid_api_key error_message='Incorrect API key provided: sk-D2NSs***************************************enUe. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+helpers.logger 2023-06-26 02:48:24,830 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:48:24,831 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:48:24,831 - INFO - Running from_llm: --- 0.0010004043579101562 seconds ---
+helpers.logger 2023-06-26 02:48:24,958 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:48:24,959 - INFO - Running from_llm: --- 0.0009996891021728516 seconds ---
+helpers.logger 2023-06-26 02:48:24,959 - INFO - Running from_llm: --- 0.0009996891021728516 seconds ---
+openai 2023-06-26 02:48:25,375 - INFO - error_code=invalid_api_key error_message='Incorrect API key provided: sk-QuDgU***************************************Vt69. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+helpers.logger 2023-06-26 02:48:46,356 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:48:46,357 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:48:46,357 - INFO - Running from_llm: --- 0.0009996891021728516 seconds ---
+helpers.logger 2023-06-26 02:48:46,484 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:48:46,485 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:48:46,485 - INFO - Running from_llm: --- 0.0009989738464355469 seconds ---
+openai 2023-06-26 02:48:46,843 - INFO - error_code=invalid_api_key error_message='Incorrect API key provided: sk-D2NSs***************************************enUe. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+helpers.logger 2023-06-26 02:49:22,623 - INFO - Running from_llm: --- 0.0009987354278564453 seconds ---
+helpers.logger 2023-06-26 02:49:22,623 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:49:22,623 - INFO - Running from_llm: --- 0.0009987354278564453 seconds ---
+helpers.logger 2023-06-26 02:49:22,753 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:49:22,753 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:49:22,754 - INFO - Running from_llm: --- 0.0010004043579101562 seconds ---
+helpers.logger 2023-06-26 02:49:24,460 - INFO - Running step: --- 1.7010509967803955 seconds ---

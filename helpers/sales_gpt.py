@@ -6,13 +6,13 @@ from pydantic import BaseModel, Field
 from langchain.chains.base import Chain
 from langchain.chat_models import ChatOpenAI
 import openai
-
+from helpers.logger import time_logger
 import os, sys
+
 DIRNAME = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(DIRNAME)
-from logger import time_logger
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 
