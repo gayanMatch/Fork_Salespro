@@ -1,4 +1,4 @@
-from sales_gpt import SalesGPT
+from helpers.sales_gpt import SalesGPT
 from langchain.chat_models import ChatOpenAI
 
 class AISalesman:

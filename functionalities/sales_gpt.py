@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 from langchain.chains.base import Chain
 from langchain.chat_models import ChatOpenAI
 import openai
-from helpers.logger import time_logger
+from functionalities.logger import time_logger
 import os, sys
 
 DIRNAME = os.path.dirname(os.path.abspath(__file__))

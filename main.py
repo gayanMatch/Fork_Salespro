@@ -1,24 +1,19 @@
 import os
-from soniox.speech_service import SpeechClient, Result
+from soniox.speech_service import SpeechClient
 from soniox.transcribe_live import transcribe_microphone
-from helpers.sales_gpt import SalesGPT
+from functionalities.sales_gpt import SalesGPT
 from langchain.chat_models import ChatOpenAI
 from elevenlabs import stream
-from typing import List, Tuple
 import time
-from scipy.io import wavfile
 from io import BytesIO
-from pydub import AudioSegment
-import numpy as np
 import requests
-from pydub import AudioSegment
 import cProfile
 import io 
 import pstats
 import langchain
 from langchain.cache import InMemoryCache
 from dotenv import load_dotenv
-
+from helpers import * 
 # load environment variables
 load_dotenv(dotenv_path="configs/.env", override=True, verbose=True)
 
@@ -32,27 +27,6 @@ ELEVEN_API_KEY = os.getenv("ELEVEN_API_KEY")
 
 # define global variables
 agent_is_speaking = False
-
-
-def add_silence_to_wav(wav_bytes, silence_duration = 0.05):
-    fs_original, wav_data_original = wavfile.read(BytesIO(wav_bytes))
-    silence_length = int(fs_original * silence_duration)
-    silence_padding = np.zeros(silence_length)
-    wav_data_padded = np.concatenate((silence_padding, wav_data_original))
-
-    output_buf = BytesIO()
-    wavfile.write(output_buf, fs_original, wav_data_padded.astype(np.int16))
-    output_buf.seek(0)
-
-    return output_buf.read()
-
-
-def convert_mp3_to_wav(mp3_bytes):
-    mp3_audio = AudioSegment.from_mp3(BytesIO(mp3_bytes))
-    output_buf = BytesIO()
-    mp3_audio.export(output_buf, format="wav")
-    output_buf.seek(0)
-    return output_buf.read()
 
 
 def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model_id: str = "eleven_monolingual_v1", optimize_streaming_latency: int = 4):
@@ -97,30 +71,7 @@ def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model
 
     agent_is_speaking = False
 
-def split_words(result:Result)->Tuple[List[str], List[str]]:
-    """Split the words in a result into final and non-final words"""
-    final_words, non_final_words = [], []
-    for word in result.words:
-        if word.is_final:
-            final_words.append(word.text)
-        else:
-            non_final_words.append(word.text)
-    return final_words, non_final_words
 
-
-def render_final_words(words:List[str])->None:
-    """Render the final words in a result"""
-    if not words:
-        return
-    line = " ".join(words)
-    print(f"User Input:{line}")
-
-def render_non_final_words(words:List[str])->None:
-    """Render the non-final words in a result"""
-    if not words:
-        return
-    line = " ".join(words)
-    print(f"Transcribing:{line}", end="\r")
 
 
 def main():

@@ -33,3 +33,17 @@ helpers.logger 2023-06-26 02:49:22,753 - INFO - Running from_llm: --- 0.0 second
 helpers.logger 2023-06-26 02:49:22,753 - INFO - Running from_llm: --- 0.0 seconds ---
 helpers.logger 2023-06-26 02:49:22,754 - INFO - Running from_llm: --- 0.0010004043579101562 seconds ---
 helpers.logger 2023-06-26 02:49:24,460 - INFO - Running step: --- 1.7010509967803955 seconds ---
+helpers.logger 2023-06-26 02:56:26,032 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:56:26,033 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:56:26,033 - INFO - Running from_llm: --- 0.0010013580322265625 seconds ---
+helpers.logger 2023-06-26 02:56:26,169 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:56:26,170 - INFO - Running from_llm: --- 0.0 seconds ---
+helpers.logger 2023-06-26 02:56:26,170 - INFO - Running from_llm: --- 0.0009970664978027344 seconds ---
+helpers.logger 2023-06-26 02:56:27,962 - INFO - Running step: --- 1.7859771251678467 seconds ---
+functionalities.logger 2023-06-26 06:14:27,515 - INFO - Running from_llm: --- 0.0 seconds ---
+functionalities.logger 2023-06-26 06:14:27,515 - INFO - Running from_llm: --- 0.0 seconds ---
+functionalities.logger 2023-06-26 06:14:27,516 - INFO - Running from_llm: --- 0.001003265380859375 seconds ---
+functionalities.logger 2023-06-26 06:14:27,649 - INFO - Running from_llm: --- 0.00099945068359375 seconds ---
+functionalities.logger 2023-06-26 06:14:27,649 - INFO - Running from_llm: --- 0.0 seconds ---
+functionalities.logger 2023-06-26 06:14:27,650 - INFO - Running from_llm: --- 0.002002716064453125 seconds ---
+functionalities.logger 2023-06-26 06:14:29,336 - INFO - Running step: --- 1.6804232597351074 seconds ---
