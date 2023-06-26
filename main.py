@@ -17,6 +17,8 @@ from helpers import *
 import pvcheetah
 import pyaudio
 import argparse
+from soniox.transcribe_file import transcribe_file_short
+import soundfile as sf
 
 # load environment variables
 load_dotenv(dotenv_path="configs/.env", override=True, verbose=True)
@@ -129,12 +131,21 @@ def transcribe_audio_stream_using_cheetah(audio_chunk):
 
     return partial_transcript, is_endpoint
 
-def main(model_name = 'soniox'):
+
+
+
+
+
+
+
+def main(model_name:str='soniox_microphone', duration:int=3, sample_rate:int=8000):
     # initialize the agent
     llm = ChatOpenAI(temperature=0.9)
     sales_agent = SalesGPT.from_llm(llm)
+    DURATION = duration
+    SAMPLE_RATE = sample_rate
 
-    if model_name == 'soniox':
+    if model_name == 'soniox_microphone':
         # Initialize SpeechClient and transcriber
         with SpeechClient() as client:
             count = 0
@@ -154,7 +165,35 @@ def main(model_name = 'soniox'):
                 if '<END_OF_CALL>' in agent_response:
                     print('Sales Agent determined it is time to end the conversation.')
                     break
-    else:
+    elif model_name == 'soniox':
+        with SpeechClient() as client:
+            count = 0
+            max_num_turns = 4
+
+            while count != max_num_turns:
+                # Agent speaks
+                count += 1
+                agent_response = agent_speaks(sales_agent)
+
+                # User speaks
+                print(f"Recording audio for {DURATION} seconds...")
+                # Record audio for 4 seconds
+                recorded_audio = record_audio()
+
+                # Save the recorded audio to a file
+                output_file = "recorded_audio.wav"
+                sf.write(output_file, recorded_audio, SAMPLE_RATE)                
+                result = transcribe_file_short("recorded_audio.wav", client)
+                user_input = " ".join(result.words)
+                if user_input:
+                    sales_agent.human_step(user_input)
+                    print(f"User input sent to agent: {user_input}")
+
+                if '<END_OF_CALL>' in agent_response:
+                    print('Sales Agent determined it is time to end the conversation.')
+                    break
+    
+    elif model_name=='picovoice':
         # Create an initial Cheetah ASR object to get the frame length
         cheetah = pvcheetah.create(access_key=PICOVOICE_API_KEY)
         CHUNK_SIZE = cheetah.frame_length  # Use the frame length specified by Cheetah
@@ -162,7 +201,13 @@ def main(model_name = 'soniox'):
 
         audio = pyaudio.PyAudio()
         stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK_SIZE)
-
+        print(f"Recording audio for {DURATION} seconds...")
+        # Record audio for 4 seconds
+        recorded_audio = record_audio()
+        # Save the recorded audio to a file
+        output_file = "recorded_audio.wav"
+        sf.write(output_file, recorded_audio, SAMPLE_RATE)
+        print("Recording saved to", output_file)
         try:
             count = 0
             max_num_turns = 4
@@ -225,6 +270,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-m", "--model_name", default="soniox", help="name of the model you wantn to use")
+    parser.add_argument(
+    "-d", "--duration", default=3, help="time in seconds for recorded audio using soniox")
+    parser.add_argument(
+    "-s", "--sample_rate", default=8000, help="sample rate of input audio for soniox")
     args = parser.parse_args()
 
     # Initialize Picovoice Cheetah ASR
@@ -236,7 +285,7 @@ if __name__ == "__main__":
     profiler.enable()
 
     # Call the function you want to profile
-    main(model_name=args.model_name)
+    main(model_name=args.model_name, duration=args.duration, sample_rate=args.sample_rate)
     
     # Stop the profiler
     profiler.disable()
@@ -244,5 +293,5 @@ if __name__ == "__main__":
     ps = pstats.Stats(profiler, stream=s).sort_stats('tottime')
     ps.print_stats()
 
-    with open('data/code_profiling/stats_soniox.txt', 'w+') as f:
+    with open(f'data/code_profiling/stats_{args.model_name}.txt', 'w+') as f:
         f.write(s.getvalue())

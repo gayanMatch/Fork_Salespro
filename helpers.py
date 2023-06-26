@@ -5,6 +5,7 @@ from io import BytesIO
 from pydub import AudioSegment
 import numpy as np
 from pydub import AudioSegment
+import sounddevice as sd
 
 def add_silence_to_wav(wav_bytes, silence_duration = 0.05):
     fs_original, wav_data_original = wavfile.read(BytesIO(wav_bytes))
@@ -50,3 +51,12 @@ def render_non_final_words(words:List[str])->None:
         return
     line = " ".join(words)
     print(f"Transcribing:{line}", end="\r")
+
+
+# soniox seconds 
+def record_audio(duration=3, sample_rate=8000):
+    channels = 1  # Number of audio channels (mono)
+    # Record audio
+    audio = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=channels)
+    sd.wait()  # Wait for the recording to complete
+    return audio
