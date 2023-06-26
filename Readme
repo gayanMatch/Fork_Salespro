@@ -1,0 +1,11 @@
+How to use? 
+Run this Python command: 
+python main.py --model <model_name> --duration <time_in_seconds> --sample_rate <sample_rate_in_hz> 
+
+We have 3 models: 
+- soniox (takes number of seconds as a duration for a prerecorded audio and sample_rate of 8000Hz) [defualt=3 seconds]
+- soniox_microphone 
+- picovoice 
+
+Example: 
+python main.py --model soniox --duration 5 --sample_rate 16000
