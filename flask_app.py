@@ -128,6 +128,7 @@ def transcribe_audio_stream_using_cheetah(audio_chunk):
     assert len(audio_data.shape) == 1, f"Invalid data shape: expected one-dimensional, but got {audio_data.shape}"
 
     # Process audio data with Cheetah ASR
+    cheetah = pvcheetah.create(access_key=PICOVOICE_API_KEY)
     partial_transcript, is_endpoint = cheetah.process(audio_data)
 
     return partial_transcript, is_endpoint
