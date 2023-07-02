@@ -1,4 +1,5 @@
 import os
+import copy
 import time
 import argparse
 from io import BytesIO
@@ -20,7 +21,7 @@ import cProfile
 import io
 import pstats
 import langchain 
-
+import pygame
 # load environment variables
 load_dotenv(dotenv_path="configs/.env", override=True, verbose=True)
 
@@ -44,7 +45,21 @@ ELEVEN_API_KEY = os.getenv("ELEVEN_API_KEY")
 PICOVOICE_API_KEY = os.getenv("PICOVOICE_API_KEY")
 
 # Play agent response using ElevenLabs TTS API
-def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model_id: str = "eleven_monolingual_v1", optimize_streaming_latency: int = 4):
+def play_mp3_chunk(filelike_object, buffer_size=4096):
+    pygame.mixer.init(frequency=44100, size=-16, channels=1, buffer=buffer_size)
+    pygame.mixer.music.load(filelike_object)
+    pygame.mixer.music.play()
+
+    while pygame.mixer.music.get_busy():
+        time.sleep(0.01)
+
+    pygame.mixer.quit()
+
+
+# def play_agent_response(text: str, player):
+#     player.start(text)
+def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model_id: str = "eleven_monolingual_v1",
+                        optimize_streaming_latency: int = 1):
     global agent_is_speaking
 
     print(f"Playing agent response: {text}")
@@ -64,23 +79,29 @@ def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model
     }
 
     response = requests.post(url, headers=headers, json=data, stream=True)
-
     # Ensure the response is valid
     if response.status_code == 200:
         # Create a BytesIO buffer to store audio data
         audio_data = BytesIO()
-        for chunk in response.iter_content(chunk_size=512):
+        print(time.time())
+        base_size = 5 * 128 * 1024 // 32
+        size = base_size
+        chunk_point = 0
+        for chunk in response.iter_content(chunk_size=size):
             if chunk:
                 audio_data.write(chunk)
-
-        # Reset the position in the buffer
-        audio_data.seek(0)
-
-        # Add silence to the beginning of the audio
-        audio_data = add_silence_to_wav(convert_mp3_to_wav(audio_data.read()))
-
-        # Stream the buffered audio data
-        stream(BytesIO(audio_data))
+                if audio_data.tell() > chunk_point + size:
+                    data = copy.copy(audio_data)
+                    data.seek(chunk_point)
+                    play_mp3_chunk(BytesIO(data.read(size)), 4096)
+                    chunk_point += size
+                    size += base_size
+        else:
+            data = copy.copy(audio_data)
+            data.seek(chunk_point)
+            play_mp3_chunk(BytesIO(data.read()), 4096)
+            chunk_point += size
+            size += base_size
     else:
         print(f"Error streaming audio: {response.status_code} {response.text}")
 
@@ -91,6 +112,11 @@ def agent_speaks(sales_agent):
     sales_agent.step()
     agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
     print("Agent response:", agent_response)
+    agent_response = """Immortal Studios, as mentioned on their website, is a Los Angeles-based studio dedicated to producing content based on the Wuxia genre. Wuxia is a Chinese martial arts and chivalry-themed genre of literature, films, and other media, which has a deep-rooted history in Chinese culture. The term "Wuxia" is derived from the combination of "wu," which signifies martial arts, and "xia," which represents chivalry and its code of honor.
+
+    Immortal Studios' mission is to reawaken the hero within everyone through Wuxia storytelling. They aim to create a new global content universe across comics, streaming, gaming, and merchandising. They plan to produce content for various platforms, which include graphic novels, live-action, animation, games, and more.
+
+    Their first release is a comic book series called "The Immortal," written by Peter Shiao, who is also the founder and CEO of Immortal Studios. The story revolves around a young man who discovers that he is the last in lineage of Immortal Men and is thrown into a hidden world of secrets, legacies, and destiny."""
     play_agent_response(agent_response)
     return agent_response
 
@@ -205,6 +231,11 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
                 sales_agent.step()
                 agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
                 print("Agent response:", agent_response)
+                agent_response = """Immortal Studios, as mentioned on their website, is a Los Angeles-based studio dedicated to producing content based on the Wuxia genre. Wuxia is a Chinese martial arts and chivalry-themed genre of literature, films, and other media, which has a deep-rooted history in Chinese culture. The term "Wuxia" is derived from the combination of "wu," which signifies martial arts, and "xia," which represents chivalry and its code of honor.
+
+                Immortal Studios' mission is to reawaken the hero within everyone through Wuxia storytelling. They aim to create a new global content universe across comics, streaming, gaming, and merchandising. They plan to produce content for various platforms, which include graphic novels, live-action, animation, games, and more.
+
+                Their first release is a comic book series called "The Immortal," written by Peter Shiao, who is also the founder and CEO of Immortal Studios. The story revolves around a young man who discovers that he is the last in lineage of Immortal Men and is thrown into a hidden world of secrets, legacies, and destiny."""
                 play_agent_response(agent_response)
 
                 print("Transcribing from your microphone...")
