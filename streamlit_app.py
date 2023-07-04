@@ -2,7 +2,6 @@ import streamlit as st
 import os
 import time
 from io import BytesIO
-from dotenv import load_dotenv
 from helpers import *
 from langchain.cache import InMemoryCache
 from langchain.chat_models import ChatOpenAI
@@ -20,12 +19,10 @@ import cProfile
 import io
 import pstats
 import langchain
+from streamlit_chat import message 
 
 PICOVOICE_API_KEY = "SoMf0xO/J9PWWRHb3HSTHxDwiGY0RDbPebuEoJlZE/MuIecCZuGaqQ=="
-
-
-# Load environment variables
-load_dotenv(dotenv_path="configs/.env", override=True, verbose=True)
+os.environ['OPENAI_API_KEY'] = "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"
 
 # Caching the responses in LLM memory
 langchain.llm_cache = InMemoryCache()
@@ -165,8 +162,9 @@ def main():
 cheetah = pvcheetah.create(access_key=PICOVOICE_API_KEY)
 main()
 
-# Display the recorded voices
-if st.session_state.agent_responses:
-    st.write(f"Recorded Voices: {st.session_state.agent_responses}")
-if st.session_state.history:
-    st.write(f"Recorded Voices: {st.session_state.history}")
+
+
+if st.session_state['agent_responses']:
+    for i in range(len(st.session_state['agent_responses'])):
+        message(st.session_state["agent_responses"][i], key=str(i))
+        message(st.session_state['history'][i], is_user=True, key=str(i) + '_user')
