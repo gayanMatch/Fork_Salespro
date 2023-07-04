@@ -11,7 +11,7 @@ from functionalities.sales_gpt import SalesGPT
 from soniox.speech_service import SpeechClient
 from soniox.transcribe_live import transcribe_microphone
 from soniox.transcribe_file import transcribe_file_short
-from elevenlabs import stream
+from elevenlabs import stream, generate
 import pyaudio
 import requests
 import soundfile as sf
@@ -58,53 +58,14 @@ def play_mp3_chunk(filelike_object, buffer_size=4096):
 
 # def play_agent_response(text: str, player):
 #     player.start(text)
-def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model_id: str = "eleven_monolingual_v1",
-                        optimize_streaming_latency: int = 1):
-
+# def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model_id: str = "eleven_monolingual_v1",
+#                         optimize_streaming_latency: int = 1):
+def play_agent_response(text: str, voice: str = "Adam", model: str = "eleven_monolingual_v1"):
     global agent_is_speaking
-
     print(f"Playing agent response: {text}")
     agent_is_speaking = True
-
-    url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/stream?optimize_streaming_latency=4"
-    headers = {
-        "Accept": "audio/mpeg",
-        "Content-Type": "application/json",
-        "xi-api-key": "0ddc8db042045085b262085b0acc096a"
-    }
-
-    data = {
-        "text": text,
-        "model_id": model_id,
-        "optimize_streaming_latency": optimize_streaming_latency
-    }
-
-    response = requests.post(url, headers=headers, json=data, stream=True)
-    # Ensure the response is valid
-    if response.status_code == 200:
-        # Create a BytesIO buffer to store audio data
-        audio_data = BytesIO()
-        base_size = 5 * 128 * 1024 // 32
-        size = base_size
-        chunk_point = 0
-        for chunk in response.iter_content(chunk_size=size):
-            if chunk:
-                audio_data.write(chunk)
-                if audio_data.tell() > chunk_point + size:
-                    data = copy.copy(audio_data)
-                    data.seek(chunk_point)
-                    play_mp3_chunk(BytesIO(data.read(size)), 4096)
-                    chunk_point += size
-                    size += base_size
-        else:
-            data = copy.copy(audio_data)
-            data.seek(chunk_point)
-            play_mp3_chunk(BytesIO(data.read()), 4096)
-            chunk_point += size
-            size += base_size
-    else:
-        print(f"Error streaming audio: {response.status_code} {response.text}")
-
+    audio_stream = generate(text=text, voice=voice, model=model, stream=True)
+    stream(audio_stream)
     agent_is_speaking = False
 
 # Function to handle agent's response
@@ -113,7 +74,9 @@ def agent_speaks(sales_agent):
     agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
 
     print("Agent response:", agent_response)
-
+    agent_response = """Immortal Studios, as mentioned on their website, is a Los Angeles-based studio dedicated to producing content based on the Wuxia genre. Wuxia is a Chinese martial arts and chivalry-themed genre of literature, films, and other media, which has a deep-rooted history in Chinese culture. The term "Wuxia" is derived from the combination of "wu," which signifies martial arts, and "xia," which represents chivalry and its code of honor.
+        Immortal Studios' mission is to reawaken the hero within everyone through Wuxia storytelling. They aim to create a new global content universe across comics, streaming, gaming, and merchandising. They plan to produce content for various platforms, which include graphic novels, live-action, animation, games, and more.
+        Their first release is a comic book series called "The Immortal," written by Peter Shiao, who is also the founder and CEO of Immortal Studios. The story revolves around a young man who discovers that he is the last in lineage of Immortal Men and is thrown into a hidden world of secrets, legacies, and destiny."""
     play_agent_response(agent_response)
     return agent_response
 
