@@ -20,7 +20,8 @@ import io
 import pstats
 import langchain
 from streamlit_chat import message 
-
+import copy
+import pygame
 PICOVOICE_API_KEY = "SoMf0xO/J9PWWRHb3HSTHxDwiGY0RDbPebuEoJlZE/MuIecCZuGaqQ=="
 os.environ['OPENAI_API_KEY'] = "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"
 
@@ -37,11 +38,26 @@ RATE = 16000  # Sample rate expected by DeepSpeech model
 CHUNK_SIZE = 480  # Number of audio frames per buffer
 FORMAT = pyaudio.paInt16  # Audio format
 
+def play_mp3_chunk(filelike_object, buffer_size=4096):
+    pygame.mixer.init(frequency=44100, size=-16, channels=1, buffer=buffer_size)
+    pygame.mixer.music.load(filelike_object)
+    pygame.mixer.music.play()
+
+    while pygame.mixer.music.get_busy():
+        time.sleep(0.01)
+
+    pygame.mixer.quit()
+
+
 # Play agent response using ElevenLabs TTS API
-def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model_id: str = "eleven_monolingual_v1", optimize_streaming_latency: int = 4):
+def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model_id: str = "eleven_monolingual_v1",
+                        optimize_streaming_latency: int = 1):
+
     global agent_is_speaking
+
+    print(f"Playing agent response: {text}")
     agent_is_speaking = True
-    
+
     url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}/stream?optimize_streaming_latency=4"
     headers = {
         "Accept": "audio/mpeg",
@@ -56,25 +72,30 @@ def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model
     }
 
     response = requests.post(url, headers=headers, json=data, stream=True)
-
     # Ensure the response is valid
     if response.status_code == 200:
         # Create a BytesIO buffer to store audio data
         audio_data = BytesIO()
-        for chunk in response.iter_content(chunk_size=512):
+        base_size = 5 * 128 * 1024 // 32
+        size = base_size
+        chunk_point = 0
+        for chunk in response.iter_content(chunk_size=size):
             if chunk:
                 audio_data.write(chunk)
-
-        # Reset the position in the buffer
-        audio_data.seek(0)
-
-        # Add silence to the beginning of the audio
-        audio_data = add_silence_to_wav(convert_mp3_to_wav(audio_data.read()))
-
-        # Stream the buffered audio data
-        stream(BytesIO(audio_data))
+                if audio_data.tell() > chunk_point + size:
+                    data = copy.copy(audio_data)
+                    data.seek(chunk_point)
+                    play_mp3_chunk(BytesIO(data.read(size)), 4096)
+                    chunk_point += size
+                    size += base_size
+        else:
+            data = copy.copy(audio_data)
+            data.seek(chunk_point)
+            play_mp3_chunk(BytesIO(data.read()), 4096)
+            chunk_point += size
+            size += base_size
     else:
-        st.write(f"Error streaming audio: {response.status_code} {response.text}")
+        print(f"Error streaming audio: {response.status_code} {response.text}")
 
     agent_is_speaking = False
 
