@@ -22,6 +22,9 @@ import io
 import pstats
 import langchain 
 import pygame
+from pydub import AudioSegment
+from speech_player.audio_generator import AudioPlayer
+
 # load environment variables
 load_dotenv(dotenv_path="configs/.env", override=True, verbose=True)
 
@@ -55,6 +58,9 @@ def play_mp3_chunk(filelike_object, buffer_size=4096):
 
     pygame.mixer.quit()
 
+
+def play_agent_response_bark(text: str, player):
+    player.start(text)
 
 # def play_agent_response(text: str, player):
 #     player.start(text)
@@ -150,10 +156,11 @@ def transcribe_audio_stream_using_cheetah(audio_chunk):
     return partial_transcript, is_endpoint
 
 
-def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: int = 8000):
+def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: int = 8000, audio_player_model:str='bark'):
     # Initialize the agent
     llm = ChatOpenAI(temperature=0.9)
     sales_agent = SalesGPT.from_llm(llm)
+    audio_player = AudioPlayer()
     DURATION = duration
     SAMPLE_RATE = sample_rate
 
@@ -166,7 +173,12 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
             while count != max_num_turns:
                 # Agent speaks
                 count += 1
-                agent_response = agent_speaks(sales_agent)
+                sales_agent.step()
+                agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
+                if audio_player_model =='bark':
+                    play_agent_response_bark(agent_response, audio_player)
+                else:
+                    play_agent_response(agent_response)
 
                 # User speaks
                 user_input = transcribe_user_input(client)
@@ -186,8 +198,13 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
             while count != max_num_turns:
                 # Agent speaks
                 count += 1
-                agent_response = agent_speaks(sales_agent)
-
+                sales_agent.step()
+                agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
+                if audio_player_model =='bark':
+                    play_agent_response_bark(agent_response, audio_player)
+                else:
+                    play_agent_response(agent_response)
+                
                 # User speaks
                 print(f"Recording audio for {DURATION} seconds...")
                 # Record audio for 4 seconds
@@ -228,8 +245,10 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
                 sales_agent.step()
                 agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
                 print("Agent response:", agent_response)
-
-                play_agent_response(agent_response)
+                if audio_player_model =='bark':
+                    play_agent_response_bark(agent_response, audio_player)
+                else:
+                    play_agent_response(agent_response)
 
                 print("Transcribing from your microphone...")
                 transcript = ""
@@ -239,7 +258,7 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
 
                 is_endpoint = False
                 start_time = time.time()
-                duration = 2  # Duration in seconds
+                duration = 3  # Duration in seconds
 
                 while not is_endpoint and time.time() - start_time <= duration:
                     buffer = stream.read(CHUNK_SIZE, exception_on_overflow=False)
@@ -275,6 +294,7 @@ if __name__ == "__main__":
     # Initialize parser
     parser = argparse.ArgumentParser()
     parser.add_argument("-m", "--model_name", default="soniox", help="name of the model you want to use")
+    parser.add_argument("-p", "--audio_player", default="bark", help="name of the model of TTS player (elevenslabs or bark)")
     parser.add_argument("-d", "--duration", default=3, help="time in seconds for recorded audio using soniox")
     parser.add_argument("-s", "--sample_rate", default=8000, help="sample rate of input audio for soniox")
     args = parser.parse_args()
