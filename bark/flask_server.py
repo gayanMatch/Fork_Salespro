@@ -10,7 +10,7 @@ import sys
 from tornado.wsgi import WSGIContainer
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
-from bark.SynthesizeThread import SynthesizeThread
+from SynthesizeThread import SynthesizeThread
 # Debug logger
 import logging
 

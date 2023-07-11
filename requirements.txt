@@ -6,3 +6,7 @@ elevenlabs
 soniox
 streamlit==1.22.0
 streamlit_chat==0.0.2.2
+flask
+transformers==4.30.2
+huggingface-hub==0.16.4
+safetensors==0.3.1

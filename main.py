@@ -24,7 +24,7 @@ import langchain
 import pygame
 from pydub import AudioSegment
 from speech_player.audio_generator import AudioPlayer
-
+import time 
 # load environment variables
 load_dotenv(dotenv_path="configs/.env", override=True, verbose=True)
 
@@ -47,7 +47,7 @@ SONIOX_API_KEY = os.getenv("SONIOX_API_KEY")
 ELEVEN_API_KEY = os.getenv("ELEVEN_API_KEY")
 PICOVOICE_API_KEY = os.getenv("PICOVOICE_API_KEY")
 
-# Play agent response using ElevenLabs TTS API
+
 def play_mp3_chunk(filelike_object, buffer_size=4096):
     pygame.mixer.init(frequency=44100, size=-16, channels=1, buffer=buffer_size)
     pygame.mixer.music.load(filelike_object)
@@ -62,11 +62,10 @@ def play_mp3_chunk(filelike_object, buffer_size=4096):
 def play_agent_response_bark(text: str, player):
     player.start(text)
 
-# def play_agent_response(text: str, player):
-#     player.start(text)
+
 def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model_id: str = "eleven_monolingual_v1",
                         optimize_streaming_latency: int = 1):
-
+    start_time = time.time()
     global agent_is_speaking
 
     print(f"Playing agent response: {text}")
@@ -86,13 +85,14 @@ def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model
     }
 
     response = requests.post(url, headers=headers, json=data, stream=True)
-    # Ensure the response is valid
+
     if response.status_code == 200:
-        # Create a BytesIO buffer to store audio data
         audio_data = BytesIO()
         base_size = 5 * 128 * 1024 // 32
         size = base_size
         chunk_point = 0
+        end_time = time.time()
+        print('eleven labs Time Difference: ', end_time - start_time)
         for chunk in response.iter_content(chunk_size=size):
             if chunk:
                 audio_data.write(chunk)
@@ -113,17 +113,15 @@ def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model
 
     agent_is_speaking = False
 
-# Function to handle agent's response
+
 def agent_speaks(sales_agent):
     sales_agent.step()
     agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
-
     print("Agent response:", agent_response)
-
     play_agent_response(agent_response)
     return agent_response
 
-# Function to transcribe user's input from microphone
+
 def transcribe_user_input(client):
     final_words = []
     print("Transcribing from your microphone...")
@@ -136,27 +134,22 @@ def transcribe_user_input(client):
         final_words += new_final_words
         render_final_words(final_words)
         render_non_final_words(non_final_words)
-
         if len(final_words) > 2:
             return " ".join(final_words).strip()
-
     return ""
 
-# Function to transcribe audio stream using Cheetah ASR
+
 def transcribe_audio_stream_using_cheetah(audio_chunk):
     audio_data = np.frombuffer(audio_chunk, dtype=np.int16)
 
-    # Ensure the audio_data input is int16 and one-dimensional (mono)
     assert audio_data.dtype == np.int16, f"Invalid data type: expected int16, got {audio_data.dtype}"
     assert len(audio_data.shape) == 1, f"Invalid data shape: expected one-dimensional, but got {audio_data.shape}"
 
-    # Process audio data with Cheetah ASR
     partial_transcript, is_endpoint = cheetah.process(audio_data)
-
     return partial_transcript, is_endpoint
 
 
-def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: int = 8000, audio_player_model:str='bark'):
+def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: int = 8000, audio_player_model: str = 'bark'):
     # Initialize the agent
     llm = ChatOpenAI(temperature=0.9)
     sales_agent = SalesGPT.from_llm(llm)
@@ -164,130 +157,97 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
     DURATION = duration
     SAMPLE_RATE = sample_rate
 
-    if model_name == 'soniox_microphone':
-        # Initialize SpeechClient and transcriber
-        with SpeechClient() as client:
-            count = 0
-            max_num_turns = 4
+    with SpeechClient() as client:
+        count = 0
+        max_num_turns = 4
 
-            while count != max_num_turns:
-                # Agent speaks
-                count += 1
-                sales_agent.step()
-                agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
-                if audio_player_model =='bark':
-                    play_agent_response_bark(agent_response, audio_player)
-                else:
-                    play_agent_response(agent_response)
+        while count != max_num_turns:
+            # Agent speaks
+            count += 1
+            agent_start_time = time.time()
+            sales_agent.step()
+            agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
+            agent_end_time = time.time()
+            print('*'*50)
+            print("Agent Response Time Difference", agent_end_time - agent_start_time)
+            print('*'*50)
 
+            if model_name == 'soniox_microphone' or model_name == 'soniox':
                 # User speaks
-                user_input = transcribe_user_input(client)
+                if model_name == 'soniox':
+                    print(f"Recording audio for {DURATION} seconds...")
+                    # Record audio for the specified duration
+                    recorded_audio = record_audio(duration)
+
+                    # Save the recorded audio to a file
+                    output_file = "recorded_audio.wav"
+                    sf.write(output_file, recorded_audio, SAMPLE_RATE)
+                    result = transcribe_file_short("recorded_audio.wav", client)
+                    user_input = " ".join(result.words)
+                else:
+                    user_input = transcribe_user_input(client)
+
                 if user_input:
                     sales_agent.human_step(user_input)
                     print(f"User input sent to agent: {user_input}")
 
-                if '<END_OF_CALL>' in agent_response:
-                    print('Sales Agent determined it is time to end the conversation.')
-                    break
-
-    elif model_name == 'soniox':
-        with SpeechClient() as client:
-            count = 0
-            max_num_turns = 4
-
-            while count != max_num_turns:
-                # Agent speaks
-                count += 1
-                sales_agent.step()
-                agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
-                if audio_player_model =='bark':
-                    play_agent_response_bark(agent_response, audio_player)
-                else:
-                    play_agent_response(agent_response)
-                
-                # User speaks
-                print(f"Recording audio for {DURATION} seconds...")
-                # Record audio for 4 seconds
-                recorded_audio = record_audio()
-
-                # Save the recorded audio to a file
-                output_file = "recorded_audio.wav"
-                sf.write(output_file, recorded_audio, SAMPLE_RATE)
-                result = transcribe_file_short("recorded_audio.wav", client)
-                user_input = " ".join(result.words)
-                if user_input:
-                    sales_agent.human_step(user_input)
-                    print(f"User input sent to agent: {user_input}")
-
-                if '<END_OF_CALL>' in agent_response:
-                    print('Sales Agent determined it is time to end the conversation.')
-                    break
-
-    elif model_name == 'picovoice':
-        # Create an initial Cheetah ASR object to get the frame length
-        cheetah = pvcheetah.create(access_key=PICOVOICE_API_KEY)
-        CHUNK_SIZE = cheetah.frame_length  # Use the frame length specified by Cheetah
-        cheetah = None  # Allow the Python garbage collector to clean up
-
-        audio = pyaudio.PyAudio()
-        stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK_SIZE)
-
-        try:
-            count = 0
-            max_num_turns = 4
-
-            while count != max_num_turns:
-                count += 1
-
-                # Create a new Cheetah ASR object before each loop
+            elif model_name == 'picovoice':
+                # Create an initial Cheetah ASR object to get the frame length
                 cheetah = pvcheetah.create(access_key=PICOVOICE_API_KEY)
+                CHUNK_SIZE = cheetah.frame_length  # Use the frame length specified by Cheetah
+                cheetah = None  # Allow the Python garbage collector to clean up
 
-                sales_agent.step()
-                agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
-                print("Agent response:", agent_response)
-                if audio_player_model =='bark':
-                    play_agent_response_bark(agent_response, audio_player)
-                else:
-                    play_agent_response(agent_response)
+                audio = pyaudio.PyAudio()
+                stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK_SIZE)
 
-                print("Transcribing from your microphone...")
-                transcript = ""
+                try:
+                    if audio_player_model == 'bark':
+                        play_agent_response_bark(agent_response, audio_player)
+                        print('*'*50)
+                    else:
+                        play_agent_response(agent_response)
 
-                while agent_is_speaking:
-                    time.sleep(0.001)
+                    print("Transcribing from your microphone...")
+                    transcript = ""
 
-                is_endpoint = False
-                start_time = time.time()
-                duration = 3  # Duration in seconds
+                    while agent_is_speaking:
+                        time.sleep(0.001)
 
-                while not is_endpoint and time.time() - start_time <= duration:
-                    buffer = stream.read(CHUNK_SIZE, exception_on_overflow=False)
-                    audio_data = np.frombuffer(buffer, dtype=np.int16)
+                    is_endpoint = False
+                    start_time = time.time()
+                    pico_start_time = time.time()
+                    duration = 3  # Duration in seconds
 
-                    # Call the transcription function on the buffered audio
-                    partial_transcript, is_endpoint = transcribe_audio_stream_using_cheetah(audio_data)
+                    while not is_endpoint and time.time() - start_time <= duration:
+                        buffer = stream.read(CHUNK_SIZE, exception_on_overflow=False)
+                        audio_data = np.frombuffer(buffer, dtype=np.int16)
 
-                    if partial_transcript:
-                        print(f"Transcribing: {partial_transcript}", end='\r')
-                        transcript += partial_transcript
+                        # Call the transcription function on the buffered audio
+                        partial_transcript, is_endpoint = transcribe_audio_stream_using_cheetah(audio_data)
 
-                # Send the transcribed text after the specified duration
-                sales_agent.human_step(transcript.strip())
-                print(f"User input sent to agent: {transcript.strip()}")
+                        if partial_transcript:
+                            print(f"Transcribing: {partial_transcript}", end='\r')
+                            transcript += partial_transcript
+                    pico_end_time = time.time()
+                    print('Picovoice Time Difference: ', pico_end_time - pico_start_time)
+                    print('*'*50)
+                    # Send the transcribed text after the specified duration
+                    sales_agent.human_step(transcript.strip())
 
-                # Reset the transcript to an empty string at the end of the loop
-                transcript = ""
+                    # Reset the transcript to an empty string at the end of the loop
+                    transcript = ""
 
-                # Allow the Python garbage collector to clean up the Cheetah ASR object
-                cheetah = None
+                    # Allow the Python garbage collector to clean up the Cheetah ASR object
+                    cheetah = None
 
-                if '<END_OF_CALL>' in agent_response:
-                    print('Sales Agent determined it is time to end the conversation.')
-                    break
-        finally:
-            stream.stop_stream()
-            stream.close()
-            audio.terminate()
+                finally:
+                    stream.stop_stream()
+                    stream.close()
+                    audio.terminate()
+
+            if '<END_OF_CALL>' in agent_response:
+                print('Sales Agent determined it is time to end the conversation.')
+                break
 
 
 if __name__ == "__main__":
