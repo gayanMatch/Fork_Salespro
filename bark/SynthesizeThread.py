@@ -1,6 +1,6 @@
 import time
 from threading import Thread
-from bark.synthesize import synthesize
+from synthesize import synthesize
 class SynthesizeThread(Thread):
     def __init__(self):
         super().__init__()

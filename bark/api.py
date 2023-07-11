@@ -3,7 +3,7 @@ from typing import Dict, Optional, Union
 import numpy as np
 import time
 import soundfile as sf
-from .generation import codec_decode, generate_coarse, generate_fine, generate_text_semantic
+from generation import codec_decode, generate_coarse, generate_fine, generate_text_semantic
 
 
 # import matplotlib.pyplot as plt

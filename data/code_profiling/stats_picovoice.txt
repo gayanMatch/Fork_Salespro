@@ -1,0 +1,1160 @@
+         61553 function calls (60774 primitive calls) in 58.221 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     2473   26.027    0.011   26.027    0.011 {built-in method time.sleep}
+      392   11.540    0.029   11.540    0.029 {built-in method pyaudio._portaudio.read_stream}
+      193    9.178    0.048    9.178    0.048 {method 'read' of '_ssl._SSLSocket' objects}
+        5    8.735    1.747    8.737    1.747 C:\Users\zas47\anaconda3\lib\site-packages\pvcheetah\_cheetah.py:100(__init__)
+       10    1.198    0.120    1.198    0.120 {built-in method pygame.mixer.quit}
+      392    0.473    0.001    0.476    0.001 C:\Users\zas47\anaconda3\lib\site-packages\pvcheetah\_cheetah.py:170(process)
+        5    0.247    0.049    0.247    0.049 {method 'do_handshake' of '_ssl._SSLSocket' objects}
+        5    0.211    0.042    0.211    0.042 {method 'connect' of '_socket.socket' objects}
+        4    0.151    0.038    0.151    0.038 {built-in method pyaudio._portaudio.initialize}
+       10    0.143    0.014    0.143    0.014 {built-in method pygame.mixer.init}
+        5    0.088    0.018    0.088    0.018 {built-in method _socket.getaddrinfo}
+        4    0.039    0.010    0.039    0.010 {built-in method pyaudio._portaudio.open}
+        4    0.036    0.009    0.036    0.009 {built-in method pyaudio._portaudio.stop_stream}
+        5    0.036    0.007    0.036    0.007 {method 'load_verify_locations' of '_ssl._SSLContext' objects}
+       10    0.011    0.001   27.385    2.739 D:\GitHub Repos\salespro\main.py:51(play_mp3_chunk)
+       57    0.009    0.000    0.009    0.000 {built-in method builtins.print}
+        1    0.007    0.007   56.408   56.408 D:\GitHub Repos\salespro\main.py:151(main)
+     2483    0.006    0.000    0.006    0.000 {built-in method pygame.mixer_music.get_busy}
+      784    0.005    0.000    0.005    0.000 {built-in method numpy.frombuffer}
+        1    0.004    0.004    0.004    0.004 {method 'read' of '_io.TextIOWrapper' objects}
+        1    0.004    0.004    0.004    0.004 {built-in method _winapi.CreateProcess}
+     99/6    0.004    0.000    0.004    0.001 C:\Users\zas47\anaconda3\lib\string.py:169(_vformat)
+        4    0.003    0.001    0.003    0.001 {built-in method pyaudio._portaudio.close}
+        8    0.003    0.000    0.004    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:281(release_conn)
+      392    0.003    0.000    0.481    0.001 D:\GitHub Repos\salespro\main.py:141(transcribe_audio_stream_using_cheetah)
+       74    0.003    0.000    0.003    0.000 {built-in method nt.stat}
+      518    0.002    0.000    0.003    0.000 C:\Users\zas47\anaconda3\lib\enum.py:359(__call__)
+      149    0.002    0.000    0.002    0.000 {built-in method __new__ of type object at 0x00007FFE0BE0AD50}
+      392    0.001    0.000   11.542    0.029 C:\Users\zas47\anaconda3\lib\site-packages\pyaudio\__init__.py:553(read)
+        6    0.001    0.000    0.001    0.000 {built-in method io.open_code}
+      518    0.001    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\enum.py:678(__new__)
+       52    0.001    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\url.py:210(_encode_invalid_chars)
+        1    0.001    0.001    0.001    0.001 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1633(__init__)
+       14    0.001    0.000    0.001    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+4286/4277    0.001    0.000    0.001    0.000 {built-in method builtins.len}
+     3856    0.001    0.000    0.002    0.000 {built-in method builtins.isinstance}
+       22    0.001    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\load\serializable.py:60(__init__)
+        5    0.001    0.000    0.001    0.000 {built-in method _ctypes.LoadLibrary}
+       10    0.001    0.000    0.001    0.000 {built-in method pygame.mixer_music.load}
+       16    0.001    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\urllib\request.py:2487(getproxies_environment)
+       16    0.001    0.000    0.001    0.000 {method 'write' of '_ssl._SSLSocket' objects}
+        8    0.000    0.000    0.000    0.000 {built-in method _brotli.BrotliDecoderDecompressStream}
+     1951    0.000    0.000    0.000    0.000 {method 'decode' of 'bytes' objects}
+      126    0.000    0.000    0.057    0.000 {method 'read' of '_io.BufferedReader' objects}
+      395    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+   134/17    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+        2    0.000    0.000    0.000    0.000 {method 'close' of 'grpc._cython.cygrpc.Channel' objects}
+        6    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+        4    0.000    0.000   32.234    8.059 D:\GitHub Repos\salespro\main.py:65(play_agent_response)
+      193    0.000    0.000    9.179    0.048 C:\Users\zas47\anaconda3\lib\ssl.py:1263(recv_into)
+      481    0.000    0.000    0.000    0.000 {built-in method time.time}
+       20    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\json\encoder.py:204(iterencode)
+      400    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\structures.py:46(__setitem__)
+      193    0.000    0.000    9.179    0.048 C:\Users\zas47\anaconda3\lib\socket.py:691(readinto)
+      789    0.000    0.000    0.000    0.000 {built-in method _ctypes.byref}
+     1744    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\os.py:698(__iter__)
+        4    0.000    0.000    0.000    0.000 {built-in method pyaudio._portaudio.start_stream}
+       24    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\url.py:333(parse_url)
+       68    0.000    0.000    0.446    0.007 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:753(_update_chunk_length)
+       69    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\_collections_abc.py:991(update)
+        1    0.000    0.000    0.000    0.000 {built-in method _winapi.WaitForSingleObject}
+       68    0.000    0.000    0.508    0.007 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:789(read_chunked)
+     2698    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+      232    0.000    0.000    9.123    0.039 {method 'readline' of '_io.BufferedReader' objects}
+       88    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:436(urlsplit)
+     1744    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\_collections_abc.py:885(__iter__)
+       24    0.000    0.000    0.001    0.000 {built-in method builtins.__build_class__}
+       80    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:371(urlparse)
+        5    0.000    0.000    0.586    0.117 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:356(connect)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:471(_parse_headers)
+      261    0.000    0.000    0.001    0.000 {built-in method _abc._abc_instancecheck}
+      193    0.000    0.000    9.179    0.048 C:\Users\zas47\anaconda3\lib\ssl.py:1121(read)
+      396    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\pvcheetah\_cheetah.py:231(frame_length)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:1331(_real_close)
+      405    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:986(__setattr__)
+       35    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ctypes\__init__.py:391(__getitem__)
+        8    0.000    0.000    9.271    1.159 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:522(urlopen)
+      149    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\os.py:675(__getitem__)
+       68    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:1238(putheader)
+  453/437    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\typing.py:306(inner)
+        5    0.000    0.000    0.000    0.000 {method 'set_ciphers' of '_ssl._SSLContext' objects}
+      833    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 {method 'getpeercert' of '_ssl._SSLSocket' objects}
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\load\serializable.py:64(to_json)
+       16    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:218(_parsegen)
+  540/530    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+      200    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:114(_coerce_args)
+        8    0.000    0.000    9.269    1.159 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:361(_make_request)
+        4    0.000    0.000    4.963    1.241 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\base.py:65(generate)
+        4    0.000    0.000    0.000    0.000 {built-in method pyaudio._portaudio.terminate}
+      103    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:146(_type_check)
+        8    0.000    0.000    8.678    1.085 C:\Users\zas47\anaconda3\lib\http\client.py:278(_read_status)
+      344    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       32    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:96(_path_join)
+        4    0.000    0.000    0.000    0.000 {function socket.close at 0x0000027C34F216C0}
+        8    0.000    0.000    9.278    1.160 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:671(send)
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\socket.py:220(__init__)
+       16    0.000    0.000    0.000    0.000 {built-in method winreg.OpenKey}
+      244    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\structures.py:51(__getitem__)
+      481    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+        8    0.000    0.000    9.276    1.160 C:\Users\zas47\anaconda3\lib\site-packages\requests\adapters.py:436(send)
+       14    0.000    0.000    0.000    0.000 {method 'flush' of '_io.TextIOWrapper' objects}
+      228    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\_collections_abc.py:909(__iter__)
+      140    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\_policybase.py:293(header_source_parse)
+        8    0.000    0.000    8.680    1.085 C:\Users\zas47\anaconda3\lib\http\client.py:311(begin)
+       25    0.000    0.000    0.000    0.000 {built-in method winreg.QueryValueEx}
+       56    0.000    0.000    0.000    0.000 {method 'write' of '_io.BytesIO' objects}
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:194(get_netrc_auth)
+       60    0.000    0.000    0.057    0.001 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:767(_handle_chunk)
+       12    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\json\decoder.py:343(raw_decode)
+       56    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:61(merge_setting)
+       54    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\queue.py:122(put)
+      209    0.000    0.000    0.000    0.000 {method 'search' of 're.Pattern' objects}
+        5    0.000    0.000    0.247    0.049 C:\Users\zas47\anaconda3\lib\ssl.py:1014(_create)
+       64    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\message.py:462(get)
+       50    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1016(__init__)
+      128    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\_collections_abc.py:821(get)
+        5    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\ssl_.py:250(create_urllib3_context)
+        8    0.000    0.000    0.006    0.001 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:457(prepare_request)
+       16    0.000    0.000    0.000    0.000 {built-in method builtins.repr}
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:2279(_signature_from_function)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:206(_read_headers)
+       29    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\cookiejar.py:1266(__init__)
+        8    0.000    0.000    9.286    1.161 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:500(request)
+       53    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\structures.py:40(__init__)
+      120    0.000    0.000    0.057    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:623(_safe_read)
+     16/8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:2374(_signature_from_callable)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\poolmanager.py:79(_default_key_normalizer)
+       56    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:335(to_key_val_list)
+       47    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\threading.py:90(RLock)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\socket.py:302(makefile)
+     1792    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
+        8    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:1284(_send_request)
+      172    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\_collections.py:156(__getitem__)
+      405    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:935(_is_dunder)
+       29    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\url.py:274(_normalize_host)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:527(wrap)
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:283(__init__)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:1082(putrequest)
+        5    0.000    0.000    0.000    0.000 {method '_wrap_socket' of '_ssl._SSLContext' objects}
+       14    0.000    0.000    0.000    0.000 {built-in method time.strftime}
+       48    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\queue.py:154(get)
+       32    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\message.py:497(get_all)
+       22    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\threading.py:236(__init__)
+      276    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+      603    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method sys.getwindowsversion}
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\copy.py:66(copy)
+     1024    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+      164    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:78(readline)
+        5    0.000    0.000    0.299    0.060 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\connection.py:37(create_connection)
+       16    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:1226(sendall)
+      404    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        4    0.000    0.000    0.040    0.010 C:\Users\zas47\anaconda3\lib\site-packages\pyaudio\__init__.py:297(__init__)
+       63    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\url.py:305(_idna_encode)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:201(__init__)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:633(from_httplib)
+        8    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:224(parse_headers)
+       21    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ntpath.py:315(expanduser)
+       14    0.000    0.000    0.000    0.000 {built-in method time.localtime}
+       47    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ntpath.py:150(splitdrive)
+       17    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ntpath.py:206(split)
+       50    0.000    0.000    0.000    0.000 {built-in method _ctypes.POINTER}
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:484(prepare_headers)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:368(_create_chat_result)
+      534    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+     64/4    0.000    0.000    0.002    0.001 C:\Users\zas47\anaconda3\lib\site-packages\openai\util.py:101(convert_to_openai_object)
+        5    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:169(__init__)
+       44    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\util.py:77(fmt)
+      149    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\os.py:747(encodekey)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:659(__init__)
+        5    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:389(__init__)
+      261    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\abc.py:117(__instancecheck__)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:139(__init__)
+      184    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\_policybase.py:281(_sanitize_header)
+        4    0.000    0.000    4.968    1.242 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\base.py:109(__call__)
+     16/4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\openai_object.py:131(refresh_from)
+       21    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\cookies.py:521(cookiejar_from_dict)
+      140    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\_collections.py:215(add)
+        8    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:410(prepare_url)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\manager.py:982(_configure)
+        1    0.000    0.000    0.004    0.004 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1(<module>)
+        5    0.000    0.000    0.000    0.000 {built-in method today}
+       63    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\url.py:306(<listcomp>)
+       24    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\url.py:244(_remove_path_dot_segments)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:2919(__init__)
+       64    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:159(hostname)
+        4    0.000    0.000    4.960    1.240 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_resources\abstract\engine_api_resource.py:127(create)
+       11    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\adapters.py:136(__init__)
+       11    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\retry.py:243(__init__)
+       68    0.000    0.000    0.508    0.007 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:812(generate)
+      7/5    0.000    0.000    4.972    0.994 D:\GitHub Repos\salespro\functionalities\logger.py:23(wrapper)
+       52    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:1027(check_header_validity)
+       91    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\_collections_abc.py:828(__contains__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:273(_create_retry_decorator)
+       10    0.000    0.000    0.000    0.000 {method '__reduce_ex__' of 'object' objects}
+       50    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\typing_extensions.py:181(_collect_type_vars)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:759(should_bypass_proxies)
+      128    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\openai_object.py:48(__setattr__)
+       29    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\cookiejar.py:885(__init__)
+       64    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:200(_hostinfo)
+      193    0.000    0.000    0.000    0.000 {method '_checkReadable' of '_io._IOBase' objects}
+       68    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:221(putheader)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\brotli\brotli.py:386(decompress)
+       12    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:417(close)
+      201    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\socket.py:730(readable)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\_collections.py:231(extend)
+        8    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:231(request)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\cookiejar.py:1361(add_cookie_header)
+  229/166    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1037(__hash__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\soniox\speech_service_pb2_grpc.py:11(__init__)
+       32    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:2636(__init__)
+      164    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:128(__next__)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\adapters.py:296(build_response)
+      103    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\threading.py:359(notify)
+        5    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\ctypes\__init__.py:340(__init__)
+        8    0.000    0.000    0.003    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:749(merge_environment_settings)
+       57    0.000    0.000    0.000    0.000 {built-in method builtins.sorted}
+       25    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\enum.py:980(__or__)
+       10    0.000    0.000    0.000    0.000 {method '__setstate__' of '_io.BytesIO' objects}
+        8    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\email\parser.py:59(parsestr)
+       68    0.000    0.000    0.508    0.007 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:607(stream)
+        4    0.000    0.000    4.969    1.242 D:\GitHub Repos\salespro\functionalities\sales_gpt.py:202(_call)
+       45    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\cookiejar.py:1227(vals_sorted_by_key)
+       21    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\typing.py:483(Union)
+      136    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\threading.py:264(__enter__)
+       20    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\json\encoder.py:182(encode)
+      140    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\message.py:479(set_raw)
+      312    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\structures.py:58(<genexpr>)
+        4    0.000    0.000    0.009    0.002 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_requestor.py:394(request_headers)
+        6    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:950(get_code)
+      370    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+       35    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ctypes\__init__.py:384(__getattr__)
+       32    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\message.py:564(get_content_type)
+       20    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\json\__init__.py:183(dumps)
+        5    0.000    0.000    0.283    0.057 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\ssl_.py:355(ssl_wrap_socket)
+      149    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\os.py:741(check_str)
+        5    0.000    0.000    0.247    0.049 C:\Users\zas47\anaconda3\lib\ssl.py:1335(do_handshake)
+        6    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1536(find_spec)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\request.py:2661(getproxies_registry)
+        4    0.000    0.000    0.040    0.010 C:\Users\zas47\anaconda3\lib\site-packages\pyaudio\__init__.py:631(open)
+        1    0.000    0.000    0.001    0.001 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_simple_stubs.py:1(<module>)
+        4    0.000    0.000    4.340    1.085 C:\Users\zas47\anaconda3\lib\site-packages\requests\api.py:14(request)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:562(set_alpn_protocols)
+       42    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\genericpath.py:16(exists)
+        4    0.000    0.000    4.962    1.240 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:318(_generate)
+       24    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\cookies.py:35(__init__)
+       83    0.000    0.000    0.000    0.000 {method 'split' of 'bytes' objects}
+      140    0.000    0.000    0.000    0.000 {method 'setdefault' of 'collections.OrderedDict' objects}
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:101(push)
+       24    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\url.py:91(__new__)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\prompts\base.py:129(validate_variable_names)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\message.py:459(<listcomp>)
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1549(findCaller)
+        8    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\email\parser.py:41(parse)
+  308/182    0.000    0.000    0.000    0.000 {built-in method builtins.hash}
+  117/109    0.000    0.000    0.001    0.000 {method 'join' of 'bytes' objects}
+       23    0.000    0.000    0.000    0.000 {method 'settimeout' of '_socket.socket' objects}
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\contextlib.py:102(__init__)
+        8    0.000    0.000    0.003    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:352(prepare)
+       16    0.000    0.000    0.000    0.000 {method 'readlines' of '_io._IOBase' objects}
+       93    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\string.py:267(get_field)
+       14    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:597(formatTime)
+       11    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\poolmanager.py:171(__init__)
+        5    0.000    0.000    0.088    0.018 C:\Users\zas47\anaconda3\lib\socket.py:938(getaddrinfo)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:495(prepare_body)
+      116    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\packages\six.py:1014(ensure_text)
+      192    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\utils.py:51(_has_surrogates)
+       29    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\timeout.py:102(__init__)
+      283    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+       88    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\re.py:288(_compile)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\_collections.py:141(__init__)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\uuid.py:138(__init__)
+  155/143    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:831(select_proxy)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\cookiejar.py:1685(extract_cookies)
+      223    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1031(__eq__)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\adapters.py:239(cert_verify)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\openai_object.py:14(__init__)
+      136    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\threading.py:267(__exit__)
+       15    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\enum.py:423(__getattr__)
+       48    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\structures.py:57(__iter__)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:53(__init__)
+      170    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
+       88    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\re.py:197(search)
+       51    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+       10    0.000    0.000    0.000    0.000 {built-in method _abc._abc_init}
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:728(verify_mode)
+      184    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\_policybase.py:311(header_fetch_parse)
+        6    0.000    0.000    0.000    0.000 {method '__exit__' of '_io._IOBase' objects}
+        7    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1680(callHandlers)
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\ssl_.py:457(is_ipaddress)
+      193    0.000    0.000    0.000    0.000 {method '_checkClosed' of '_io._IOBase' objects}
+       33    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1724(isEnabledFor)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:283(_put_conn)
+       15    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\encodings\idna.py:145(encode)
+        8    0.000    0.000    8.680    1.085 C:\Users\zas47\anaconda3\lib\http\client.py:1330(getresponse)
+       16    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\cookies.py:124(extract_cookies_to_jar)
+        4    0.000    0.000    0.151    0.038 C:\Users\zas47\anaconda3\lib\site-packages\pyaudio\__init__.py:589(__init__)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\cookiejar.py:1604(make_cookies)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:71(proxy_bypass_registry)
+        3    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\wait.py:42(_retry_on_intr)
+        6    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:921(_find_spec)
+        4    0.000    0.000    4.340    1.085 C:\Users\zas47\anaconda3\lib\site-packages\requests\api.py:103(post)
+        4    0.000    0.000    4.958    1.239 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_requestor.py:497(request_raw)
+       37    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\packages\six.py:991(ensure_str)
+       14    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:665(format)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ipaddress.py:28(ip_address)
+       16    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:967(send)
+       12    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\json\decoder.py:332(decode)
+       14    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1088(emit)
+       25    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1407(_channel_managed_call_management)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:1967(_signature_bound_method)
+        8    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\adapters.py:333(get_connection)
+        4    0.000    0.000    4.961    1.240 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:369(__call__)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:248(__init__)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:837(__init__)
+       68    0.000    0.000    0.000    0.000 {method 'fullmatch' of 're.Pattern' objects}
+        6    0.000    0.000    0.000    0.000 {built-in method _winapi.CloseHandle}
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\socket.py:679(__init__)
+        5    0.000    0.000    8.737    1.747 C:\Users\zas47\anaconda3\lib\site-packages\pvcheetah\_factory.py:18(create)
+       12    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\util.py:56(log_debug)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:611(prepare_cookies)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:504(urlunsplit)
+      423    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:1109(_checkClosed)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:258(__init__)
+        4    0.000    0.000    0.004    0.001 C:\Users\zas47\anaconda3\lib\site-packages\pyaudio\__init__.py:449(close)
+        5    0.000    0.000    0.299    0.060 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:161(_new_conn)
+       48    0.000    0.000    0.000    0.000 {method 'subn' of 're.Pattern' objects}
+       98    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\threading.py:279(_is_owned)
+        8    0.000    0.000    0.586    0.073 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:1034(_validate_conn)
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ntpath.py:103(join)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\ssl_match_hostname.py:98(match_hostname)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:533(get_encoding_from_headers)
+      7/2    0.000    0.000    0.006    0.003 <frozen importlib._bootstrap>:1022(_find_and_load)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\brotli\brotli.py:373(__init__)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\poolmanager.py:263(connection_from_pool_key)
+        4    0.000    0.000    0.036    0.009 C:\Users\zas47\anaconda3\lib\site-packages\pyaudio\__init__.py:495(stop_stream)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:998(_new_conn)
+       45    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\cookiejar.py:1231(deepvalues)
+        1    0.000    0.000    0.000    0.000 {built-in method nt.listdir}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\enum.py:1026(_decompose)
+       22    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\socket.py:99(_intenum_converter)
+       79    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1247(__hash__)
+        4    0.000    0.000    0.004    0.001 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\llm.py:99(prep_prompts)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\queue.py:34(__init__)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\_collections.py:92(clear)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:1028(_send_output)
+       32    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\_collections_abc.py:840(items)
+       21    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:267(_remove_dups_flatten)
+       50    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:947(__init__)
+      104    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:1046(_validate_header_part)
+       48    0.000    0.000    0.000    0.000 {method 'new' of '_cffi_backend.FFI' objects}
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\socket.py:768(close)
+       14    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1077(flush)
+       60    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:398(_decode)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:380(cache_from_source)
+       17    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1138(__getitem__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_resources\abstract\engine_api_resource.py:63(__prepare_create_request)
+       12    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\json\__init__.py:299(loads)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:107(proxy_bypass)
+      148    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\_collections.py:187(__iter__)
+       10    0.000    0.000    0.000    0.000 {method 'read' of '_io.BytesIO' objects}
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:1011(get_auth_from_url)
+      232    0.000    0.000    0.000    0.000 {method 'partition' of 'str' objects}
+      197    0.000    0.000    0.000    0.000 {method 'upper' of 'str' objects}
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\message.py:120(__init__)
+     16/4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\openai_object.py:104(construct_from)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:493(urlunparse)
+       87    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\timeout.py:119(_validate_timeout)
+      7/2    0.000    0.000    0.006    0.003 <frozen importlib._bootstrap>:987(_find_and_load_unlocked)
+       32    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\manager.py:972(env_var_is_set)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\structures.py:76(copy)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\contextlib.py:279(helper)
+       16    0.000    0.000    0.004    0.000 C:\Users\zas47\anaconda3\lib\contextlib.py:139(__exit__)
+       12    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:106(_encode_params)
+       11    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\adapters.py:174(init_poolmanager)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:190(__init__)
+       20    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+        4    0.000    0.000    4.968    1.242 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\base.py:250(run)
+       14    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:955(handle)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:699(closed)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\cookies.py:140(get_cookie_header)
+        4    0.000    0.000    4.960    1.240 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_resources\chat_completion.py:12(create)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\response.py:40(assert_header_parsing)
+        8    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:819(get_environ_proxies)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\cookies.py:542(merge_cookies)
+        4    0.000    0.000    0.010    0.002 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_requestor.py:458(_prepare_request_raw)
+       15    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\enum.py:22(_is_dunder)
+       14    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:431(_format)
+       65    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.RLock' objects}
+       99    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\string.py:258(parse)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\manager.py:728(on_chain_start)
+       26    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1455(debug)
+        4    0.000    0.000    4.967    1.242 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\llm.py:77(generate)
+       90    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\typing_extensions.py:169(_should_collect_from_parameters)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:115(__init__)
+      136    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:223(<genexpr>)
+      123    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+       12    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\util.py:76(logfmt)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\poolmanager.py:248(connection_from_context)
+      148    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
+        1    0.000    0.000    0.004    0.004 C:\Users\zas47\anaconda3\lib\subprocess.py:758(__init__)
+        5    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:914(__init__)
+      191    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        8    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\poolmanager.py:287(connection_from_url)
+        1    0.000    0.000    0.001    0.001 C:\Users\zas47\anaconda3\lib\site-packages\grpc\experimental\__init__.py:1(<module>)
+       32    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\message.py:29(_splitparam)
+       21    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\hooks.py:15(default_hooks)
+       16    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:178(_call_parse)
+      102    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\queue.py:15(_qsize)
+       45    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\cookiejar.py:1758(__iter__)
+        7    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1467(info)
+       21    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\url.py:300(<listcomp>)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:888(quote_from_bytes)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:179(_get_module_lock)
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\copy.py:259(_reconstruct)
+        4    0.000    0.000    4.963    1.241 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\base.py:160(generate_prompt)
+       18    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:132(host)
+       76    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:1007(_output)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:208(putrequest)
+       54    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\queue.py:18(_put)
+      144    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\url.py:416(ensure_type)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:305(iter)
+        5    0.000    0.000    0.247    0.049 C:\Users\zas47\anaconda3\lib\ssl.py:507(wrap_socket)
+       93    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\string.py:223(get_value)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\uuid.py:718(uuid4)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:244(_get_conn)
+   134/17    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\abc.py:121(__subclasscheck__)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ipaddress.py:1173(_ip_int_from_string)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\load\serializable.py:70(<dictcomp>)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\message.py:213(get_payload)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\pyaudio\__init__.py:654(_remove_stream)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:492(_init_module_attrs)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:253(statistics)
+       11    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\_collections.py:47(__init__)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\poolmanager.py:225(connection_from_host)
+       27    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1147(copy_with)
+        7    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1600(_log)
+        6    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1070(get_data)
+       28    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:912(acquire)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\base.py:376(__init__)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:893(default_headers)
+        4    0.000    0.000    0.000    0.000 {built-in method _brotli.BrotliDecoderCreateInstance}
+       20    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\retry.py:84(__init__)
+      6/2    0.000    0.000    0.006    0.003 <frozen importlib._bootstrap>:664(_load_unlocked)
+       16    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:1199(send)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\functools.py:35(update_wrapper)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:612(unwrap)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:795(iter_content)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:614(options)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\poolmanager.py:174(<lambda>)
+        4    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\util.py:94(get_object_classes)
+       12    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\json\encoder.py:104(__init__)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:159(resolve_redirects)
+       16    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\typing.py:523(Optional)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ipaddress.py:1878(__init__)
+       11    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:799(mount)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:207(register_hook)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:335(__init__)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\pvcheetah\_util.py:52(default_library_path)
+      152    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+       24    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\concurrent\futures\_base.py:465(exception)
+       68    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:1286(<genexpr>)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\adapters.py:372(request_url)
+       32    0.000    0.000    0.004    0.000 {built-in method builtins.next}
+      105    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:137(_type_convert)
+        1    0.000    0.000    0.009    0.009 C:\Users\zas47\anaconda3\lib\platform.py:360(win32_ver)
+       16    0.000    0.000    0.004    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:431(_error_catcher)
+       19    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1194(__getitem__)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\load\dump.py:21(dumpd)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:297(__init__)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\genericpath.py:39(isdir)
+       98    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.lock' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:483(close)
+       48    0.000    0.000    0.000    0.000 {method 'count' of 'bytes' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_requestor.py:654(_interpret_response_line)
+      6/2    0.000    0.000    0.006    0.003 <frozen importlib._bootstrap_external>:877(exec_module)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\contextlib.py:130(__enter__)
+       44    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\queue.py:21(_get)
+        4    0.000    0.000    4.967    1.242 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\llm.py:69(_call)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:85(path_url)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\load\dump.py:7(default)
+       10    0.000    0.000    0.000    0.000 {built-in method pygame.mixer_music.play}
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:375(_init_decoder)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:66(get_annotations)
+       20    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1673(unary_unary)
+       76    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1242(__eq__)
+       21    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:806(filter)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:643(unquote)
+        5    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\poolmanager.py:189(_new_pool)
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1223(__getitem__)
+       27    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+        1    0.000    0.000    0.004    0.004 C:\Users\zas47\anaconda3\lib\subprocess.py:1354(_execute_child)
+       48    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\_collections_abc.py:862(__init__)
+      200    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:103(_noop)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:184(close)
+       93    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\string.py:234(format_field)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:429(flush)
+    48/12    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\retry.py:262(<genexpr>)
+      102    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.lock' objects}
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:910(urlencode)
+        5    0.000    0.000    0.000    0.000 {method 'setsockopt' of '_socket.socket' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\manager.py:695(on_chat_model_start)
+        6    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\ssl_match_hostname.py:25(_dnsname_match)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:817(quote)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\retry.py:448(_is_method_retryable)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:531(_match_hostname)
+        4    0.000    0.000    4.960    1.240 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:298(_completion_with_retry)
+       60    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\_internal_utils.py:23(to_native_string)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:721(spec_from_file_location)
+      140    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1022(<genexpr>)
+       12    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\util.py:91(<listcomp>)
+        7    0.000    0.000    0.000    0.000 {built-in method _winapi.LCMapStringEx}
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:100(acquire)
+       32    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:119(<listcomp>)
+       33    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ntpath.py:35(_get_bothseps)
+      127    0.000    0.000    0.000    0.000 {built-in method nt.fspath}
+        8    0.000    0.000    0.000    0.000 {method 'close' of '_io.BufferedReader' objects}
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\manager.py:278(__init__)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\timeout.py:181(clone)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\adapters.py:362(close)
+        5    0.000    0.000    0.000    0.000 {method 'getsockopt' of '_socket.socket' objects}
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:122(pushlines)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\urllib\request.py:2710(getproxies)
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ntpath.py:51(normcase)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:324(_get_timeout)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\_collections.py:54(__getitem__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:281(wraps)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:573(prepare_content_length)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\cookiejar.py:1739(clear_expired_cookies)
+        4    0.000    0.000    4.958    1.239 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_requestor.py:205(request)
+       24    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:84(<listcomp>)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\pyaudio\__init__.py:594(terminate)
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\genericpath.py:121(_splitext)
+        4    0.000    0.000    0.004    0.001 C:\Users\zas47\anaconda3\lib\site-packages\langchain\prompts\prompt.py:56(format)
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:132(_path_split)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\socket.py:514(family)
+        8    0.000    0.000    0.000    0.000 {built-in method nt.urandom}
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\copyreg.py:100(__newobj__)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:128(super_len)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:260(_default_params)
+        6    0.000    0.000    0.004    0.001 C:\Users\zas47\anaconda3\lib\string.py:163(vformat)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:618(options)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ipaddress.py:1272(__init__)
+        4    0.000    0.000    4.962    1.240 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\base.py:95(<listcomp>)
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1585(makeRecord)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\_collections.py:61(__setitem__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:467(set_result)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:70(close)
+        4    0.000    0.000    4.961    1.240 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:287(wrapped_f)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\pvcheetah\_util.py:75(default_model_path)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\concurrent\futures\_base.py:539(set_result)
+        1    0.000    0.000    0.009    0.009 C:\Users\zas47\anaconda3\lib\platform.py:261(_syscmd_ver)
+       24    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\message.py:588(get_content_maintype)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\url.py:323(_encode_target)
+       12    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\util.py:33(from_str)
+       74    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+       81    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\encodings\cp1252.py:18(encode)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\cookies.py:358(update)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:3251(signature)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:790(__iter__)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\cookiejar.py:1302(_cookie_attrs)
+      119    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+       21    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:253(_deduplicate)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ipaddress.py:1606(_ip_int_from_string)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:770(is_redirect)
+       40    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:2968(<genexpr>)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:2997(from_callable)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\message.py:451(items)
+        8    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:173(feed)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:323(_init_length)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:96(_convert_dict_to_message)
+     17/1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\copy.py:128(deepcopy)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1730(_close)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:780(get_adapter)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:237(<genexpr>)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\socket.py:488(_decref_socketios)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:394(prepare_method)
+       38    0.000    0.000    0.000    0.000 {method 'count' of 'str' objects}
+    37/21    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\typing.py:401(__getitem__)
+       14    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:932(format)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\manager.py:447(get_child)
+       21    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\cookies.py:534(<listcomp>)
+       62    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:197(_new_message)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:630(unquote_unreserved)
+        4    0.000    0.000    0.004    0.001 C:\Users\zas47\anaconda3\lib\site-packages\langchain\prompts\base.py:235(format_prompt)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\_collections_abc.py:836(keys)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:654(requote_uri)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:585(_classify_pyc)
+       63    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:515(<genexpr>)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\manager.py:367(on_llm_end)
+       49    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 {method 'getpeername' of '_socket.socket' objects}
+       52    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\types.py:176(__get__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\collections\__init__.py:443(_asdict)
+        5    0.000    0.000    0.247    0.049 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\ssl_.py:481(_ssl_wrap_socket_impl)
+       48    0.000    0.000    0.000    0.000 {method 'decode' of 'bytearray' objects}
+     16/4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\retry.py:261(__call__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_simple_stubs.py:72(ChannelCache)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:75(__init__)
+      121    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:670(_compile_bytecode)
+        7    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1626(handle)
+        5    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\ctypes\__init__.py:451(LoadLibrary)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:767(get_proxy)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:589(prepare_auth)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:290(_has_code_flag)
+       84    0.000    0.000    0.000    0.000 {method 'values' of 'collections.OrderedDict' objects}
+      109    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\_collections_abc.py:409(__subclasshook__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:299(begin)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\base_language.py:96(all_required_field_names)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:172(_path_isabs)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\load\dump.py:14(dumps)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:887(content)
+       20    0.000    0.000    0.000    0.000 {function HTTPResponse.close at 0x0000027C4EA98B80}
+        6    0.000    0.000    0.004    0.001 C:\Users\zas47\anaconda3\lib\site-packages\langchain\formatting.py:20(vformat)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:1151(getpeercert)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\base.py:82(_validate_inputs)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:953(close)
+        4    0.000    0.000    4.961    1.240 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:294(completion_with_retry)
+       26    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+       93    0.000    0.000    0.000    0.000 {built-in method _string.formatter_field_name_split}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\concurrent\futures\_base.py:330(__init__)
+        6    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1399(_get_spec)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:949(_UnaryUnaryMultiCallable)
+       49    0.000    0.000    0.000    0.000 {method 'groups' of 're.Match' objects}
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:125(release)
+        1    0.000    0.000    0.009    0.009 C:\Users\zas47\anaconda3\lib\subprocess.py:461(run)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\connection.py:100(_set_socket_options)
+        7    0.000    0.000    0.000    0.000 {built-in method _codecs.charmap_encode}
+        8    0.000    0.000    0.000    0.000 {method 'Close' of 'PyHKEY' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\enum.py:947(_create_pseudo_member_)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1227(_close_pipe_fds)
+       11    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:805(<listcomp>)
+        4    0.000    0.000    4.969    1.242 D:\GitHub Repos\salespro\functionalities\sales_gpt.py:198(step)
+       15    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:908(system)
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\ssl_.py:211(resolve_cert_reqs)
+       99    0.000    0.000    0.000    0.000 {built-in method _string.formatter_parser}
+        8    0.000    0.000    0.002    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:1279(request)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:794(close)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\wait.py:145(__init__)
+        5    0.000    0.000    0.000    0.000 {built-in method nt._getfullpathname}
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ntpath.py:229(splitext)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:508(_parse_content_type_header)
+       43    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\load\serializable.py:33(lc_namespace)
+       28    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:919(release)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:631(prepare_hooks)
+       20    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:958(__init__)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_resources\abstract\api_resource.py:162(_get_api_type_and_version)
+       14    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:643(usesTime)
+     10/4    0.000    0.000    0.005    0.001 <frozen importlib._bootstrap>:1053(_handle_fromlist)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:963(_prepare_conn)
+       21    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:359(getMessage)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:1405(version)
+        8    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:1266(endheaders)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\timeout.py:165(from_float)
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\abc.py:105(__new__)
+       14    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:423(usesTime)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:413(_invocation_params)
+       12    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\util.py:47(_console_log_level)
+      148    0.000    0.000    0.000    0.000 {method 'popleft' of 'collections.deque' objects}
+       26    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_common.py:70(encode)
+        1    0.000    0.000    0.000    0.000 {built-in method _winapi.CreatePipe}
+       35    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1234(<genexpr>)
+        1    0.000    0.000    0.009    0.009 C:\Users\zas47\anaconda3\lib\subprocess.py:373(check_output)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:107(get_redirect_target)
+        1    0.000    0.000    0.000    0.000 {built-in method winreg.OpenKeyEx}
+       18    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:84(_unpack_uint32)
+       11    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:150(_path_is_mode_type)
+        2    0.000    0.000    0.000    0.000 {method 'close' of '_io.TextIOWrapper' objects}
+       24    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:140(_path_stat)
+        5    0.000    0.000    0.001    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:488(__new__)
+       21    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\hooks.py:16(<dictcomp>)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\openai_response.py:17(response_ms)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1260(_get_handles)
+        1    0.000    0.000    0.000    0.000 {built-in method nt.open}
+       12    0.000    0.000    0.000    0.000 {method 'sort' of 'list' objects}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:564(module_from_spec)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_requestor.py:121(__init__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:116(__init__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\base.py:296(dict)
+        8    0.000    0.000    0.000    0.000 {method 'write' of '_io.StringIO' objects}
+        4    0.000    0.000    0.009    0.002 C:\Users\zas47\anaconda3\lib\platform.py:1181(platform)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:210(_pop_message)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:426(__init__)
+        4    0.000    0.000    0.000    0.000 D:\GitHub Repos\salespro\functionalities\sales_gpt.py:193(human_step)
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1204(emit)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:383(_check_close)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:323(set_cert)
+       11    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\adapters.py:74(__init__)
+      118    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1531(_get_spec)
+       52    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\enum.py:446(<genexpr>)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_requestor.py:606(_interpret_response)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_resources\abstract\engine_api_resource.py:21(class_url)
+       63    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:494(_parse)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:420(_flush_decoder)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:258(extract_zipped_paths)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\request.py:40(__init__)
+        5    0.000    0.000    0.000    0.000 {method '_set_alpn_protocols' of '_ssl._SSLContext' objects}
+       20    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:819(uname)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\base.py:88(_validate_outputs)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\socket.py:494(_real_close)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:188(_userinfo)
+       20    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\manager.py:174(_handle_event)
+        3    0.000    0.000    0.006    0.002 {built-in method builtins.__import__}
+       30    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:244(_verbose_message)
+       64    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\load\serializable.py:41(lc_secrets)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:192(_is_using_tunnel)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\queue.py:12(_init)
+       24    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:201(<genexpr>)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\manager.py:71(_get_debug)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\manager.py:793(configure)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:499(_encode_hostname)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\poolmanager.py:216(clear)
+        6    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\formatting.py:9(check_unused_args)
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
+       16    0.000    0.000    0.000    0.000 {method 'mro' of 'type' objects}
+       93    0.000    0.000    0.000    0.000 {method 'isdigit' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1587(_fill_cache)
+       93    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\string.py:238(convert_field)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1482(_wait)
+       11    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\retry.py:301(<listcomp>)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:71(__init__)
+       14    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:438(format)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:1213(_validate_method)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\retry.py:468(is_retry)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\prompts\base.py:161(_merge_partial_and_user_variables)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:67(_relax_case)
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:736(verify_mode)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:151(username)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\base.py:207(prep_outputs)
+       24    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:407(failed)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\retry.py:35(__or__)
+        8    0.000    0.000    0.000    0.000 {method 'rstrip' of 'bytes' objects}
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:801(__init__)
+       35    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1143(<genexpr>)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1315(getLogger)
+       20    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:277(isfunction)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\manager.py:311(on_text)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\contextlib.py:533(__exit__)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\ssl_match_hostname.py:79(_to_unicode)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:318(_InactiveRpcError)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\_internal_utils.py:36(unicode_is_ascii)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1626(Channel)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\base.py:222(prep_inputs)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\packages\six.py:642(itervalues)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\poolmanager.py:303(_merge_pool_kwargs)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:188(build_extra)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1724(_unsubscribe_all)
+       36    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:134(<genexpr>)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:3013(replace)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\prompts\base.py:99(to_messages)
+       16    0.000    0.000    0.000    0.000 {method 'read' of '_io.StringIO' objects}
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\socket.py:504(detach)
+       14    0.000    0.000    0.000    0.000 {method 'difference' of 'set' objects}
+      6/2    0.000    0.000    0.005    0.002 {built-in method builtins.exec}
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:160(<lambda>)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\response.py:94(is_response_to_head)
+       14    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:649(formatMessage)
+        1    0.000    0.000    0.004    0.004 C:\Users\zas47\anaconda3\lib\subprocess.py:1110(communicate)
+       17    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\typing_extensions.py:147(_check_generic)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\parser.py:17(__init__)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\cookies.py:110(__init__)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\structures.py:60(__len__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:408(_identifying_params)
+       16    0.000    0.000    0.000    0.000 {method 'cast' of 'memoryview' objects}
+        6    0.000    0.000    0.004    0.001 C:\Users\zas47\anaconda3\lib\string.py:160(format)
+       19    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:440(isclosed)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:105(_RPCState)
+        1    0.000    0.000    0.000    0.000 {grpc._cython.cygrpc.channel_credentials_insecure}
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ctypes\__init__.py:368(_FuncPtr)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:113(_convert_message_to_dict)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:403(__init__)
+       16    0.000    0.000    0.000    0.000 {method 'extend' of 'collections.deque' objects}
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\threading.py:1430(current_thread)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\message.py:303(set_payload)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\timeout.py:195(start_connect)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:744(supports_chunked_reads)
+       24    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\cookiejar.py:44(_debug)
+        1    0.000    0.000    0.001    0.001 D:\GitHub Repos\salespro\functionalities\sales_gpt.py:225(from_llm)
+       65    0.000    0.000    0.000    0.000 {method 'release' of '_thread.RLock' objects}
+        9    0.000    0.000    0.000    0.000 {method 'pop' of 'collections.OrderedDict' objects}
+       12    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:391(cached)
+        6    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1431(find_spec)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:150(_get_decoder)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:357(_create_message_dicts)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1188(_StreamUnaryMultiCallable)
+       61    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.RLock' objects}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1356(_path_importer_cache)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:233(_norm_version)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\formatting.py:31(validate_input_variables)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:504(_SingleThreadedRendezvous)
+       93    0.000    0.000    0.000    0.000 {built-in method builtins.format}
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:169(__enter__)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:510(_get_cached)
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ntpath.py:240(basename)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\functools.py:65(wraps)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\encodings\__init__.py:71(search_function)
+        3    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\wait.py:70(select_wait_for_socket)
+       56    0.000    0.000    0.000    0.000 {method 'tell' of '_io.BytesIO' objects}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_compile.py:783(compile)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\socket.py:498(close)
+        8    0.000    0.000    0.000    0.000 <string>:1(<lambda>)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:618(_validate_timestamp_pyc)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_compile.py:560(_compile_info)
+        1    0.000    0.000    0.006    0.006 C:\Users\zas47\anaconda3\lib\site-packages\grpc\__init__.py:1968(secure_channel)
+       20    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\retry.py:68(__call__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:214(validate_environment)
+        1    0.000    0.000    0.001    0.001 C:\Users\zas47\anaconda3\lib\site-packages\openai\object_classes.py:1(<module>)
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ntpath.py:247(dirname)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\__init__.py:516(retry)
+       32    0.000    0.000    0.000    0.000 {method 'get' of '_contextvars.ContextVar' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\contextlib.py:496(callback)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:412(_close_conn)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\cookiejar.py:1295(_cookies_for_request)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\copy.py:227(_deepcopy_dict)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_requestor.py:78(_make_session)
+        7    0.000    0.000    0.000    0.000 D:\GitHub Repos\salespro\functionalities\logger.py:13(filter)
+       58    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_compile.py:292(_optimize_charset)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\connection.py:108(allowed_gai_family)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\concurrent\futures\_base.py:430(result)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\hooks.py:22(dispatch_hook)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:403(_Rendezvous)
+       32    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:542(_check_name_wrapper)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1089(path_stats)
+       68    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1737(cast)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:884(default_user_agent)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:304(_combine_llm_outputs)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\encodings\cp1252.py:22(decode)
+        1    0.000    0.000    0.006    0.006 C:\Users\zas47\anaconda3\lib\site-packages\soniox\speech_service.py:80(__init__)
+        3    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1332(_make_inheritable)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\request.py:101(set_file_position)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:704(_MultiThreadedRendezvous)
+        8    0.000    0.000    0.000    0.000 {method 'values' of 'mappingproxy' objects}
+       56    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:2686(name)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:723(<listcomp>)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\_collections_abc.py:865(__len__)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\threading.py:389(notify_all)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\input.py:24(get_colored_text)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\util.py:22(<lambda>)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:1095(_normalize_host)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:1222(_validate_path)
+      8/2    0.000    0.000    0.006    0.003 <frozen importlib._bootstrap>:233(_call_with_frames_removed)
+       24    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:897(__exit__)
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:119(getLevelName)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:91(merge_hooks)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\_utils.py:75(to_seconds)
+        7    0.000    0.000    0.000    0.000 {built-in method nt._path_splitroot}
+       64    0.000    0.000    0.000    0.000 {built-in method builtins.callable}
+        6    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:944(parse)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:257(<genexpr>)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\experimental\__init__.py:72(experimental_api)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:198(cb)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\encodings\__init__.py:43(normalize_encoding)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:996(_sys_version)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:1113(python_version)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:1230(_validate_host)
+        7    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\threading.py:1129(name)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ipaddress.py:1843(_split_scope_id)
+       21    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\timeout.py:220(connect_timeout)
+       16    0.000    0.000    0.000    0.000 {method 'truncate' of '_io.StringIO' objects}
+        5    0.000    0.000    0.000    0.000 {method 'version' of '_ssl._SSLSocket' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\llm.py:110(<dictcomp>)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\message.py:181(is_multipart)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\timeout.py:238(read_timeout)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:737(set_environ)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:357(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\functools.py:961(__get__)
+       24    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:893(__enter__)
+       16    0.000    0.000    0.000    0.000 {built-in method time.perf_counter}
+        4    0.000    0.000    0.000    0.000 {method 'copy' of 'set' objects}
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:159(_path_isfile)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\llm.py:187(create_outputs)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\util.py:120(<listcomp>)
+        9    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:196(Close)
+       24    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_requestor.py:401(<genexpr>)
+       34    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.RLock' objects}
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1366(_fixupParents)
+       12    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\llm.py:61(output_keys)
+        3    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\wait.py:141(wait_for_read)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\encodings\idna.py:298(getregentry)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\utils.py:21(get_from_env)
+       32    0.000    0.000    0.000    0.000 {method '__exit__' of 'memoryview' objects}
+        3    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\connection.py:11(is_connection_dropped)
+       20    0.000    0.000    0.000    0.000 {built-in method time.monotonic}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:48(_new_module)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:380(__repr__)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1208(__getitem_inner__)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:335(geturl)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1494(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:545(_platform)
+       10    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1435(__init__)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:2071(getLogger)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:410(_splitnetloc)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\ssl_.py:234(resolve_ssl_version)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\retry.py:258(__init__)
+       30    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+       32    0.000    0.000    0.000    0.000 {method 'seek' of '_io.StringIO' objects}
+        1    0.000    0.000    0.000    0.000 <frozen zipimport>:64(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1343(_path_hooks)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\socket.py:520(type)
+        1    0.000    0.000    0.000    0.000 D:\GitHub Repos\salespro\functionalities\sales_gpt.py:31(from_llm)
+       32    0.000    0.000    0.000    0.000 {method 'items' of 'collections.OrderedDict' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\contextlib.py:514(_push_exit_callback)
+       52    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\enum.py:801(value)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:1209(_encode_request)
+        4    0.000    0.000    0.000    0.000 {method 'gc' of '_cffi_backend.FFI' objects}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1040(__init__)
+        1    0.000    0.000    0.000    0.000 D:\GitHub Repos\salespro\functionalities\sales_gpt.py:60(from_llm)
+       16    0.000    0.000    0.000    0.000 {method 'update' of 'collections.OrderedDict' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\llm.py:189(<listcomp>)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\wait.py:113(_have_working_poll)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\response.py:123(flush)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:454(__exit__)
+        8    0.000    0.000    0.000    0.000 {method 'flush' of '_io.BufferedReader' objects}
+        5    0.000    0.000    0.000    0.000 {method 'extend' of 'bytearray' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\llm.py:53(input_keys)
+       32    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\cookies.py:117(info)
+        1    0.000    0.000    0.001    0.001 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_resources\experimental\__init__.py:1(<module>)
+       48    0.000    0.000    0.000    0.000 {method 'pop' of 'collections.deque' objects}
+        7    0.000    0.000    0.000    0.000 {built-in method nt.getpid}
+       38    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:632(_is_wrapper)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\base.py:423(add_tags)
+       20    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\retry.py:65(__init__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\openai_response.py:5(__init__)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:173(__exit__)
+       10    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\ssl.py:1113(_check_connected)
+       60    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\load\serializable.py:49(lc_attributes)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\manager.py:456(on_chain_end)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\base.py:167(<listcomp>)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:365(<listcomp>)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\openai_object.py:69(__setitem__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1451(_ChannelConnectivityState)
+        8    0.000    0.000    0.000    0.000 {method 'get' of 'mappingproxy' objects}
+       28    0.000    0.000    0.000    0.000 {built-in method builtins.id}
+        4    0.000    0.000    0.000    0.000 {built-in method builtins.round}
+       38    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:165(__init__)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:219(_acquireLock)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\before_sleep.py:31(before_sleep_log)
+        1    0.000    0.000    0.006    0.006 C:\Users\zas47\anaconda3\lib\site-packages\soniox\speech_service.py:68(create_channel)
+        5    0.000    0.000    0.000    0.000 {method 'append' of 'bytearray' objects}
+        3    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\os.py:772(getenv)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\enum.py:442(__iter__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:175(getwidth)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1080(_get_devnull)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:308(iscoroutinefunction)
+       34    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\typing_extensions.py:198(<listcomp>)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\ssl_.py:325(disable_check_hostname)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1290(_StreamStreamMultiCallable)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\enum.py:937(_missing_)
+       28    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_compile.py:87(_compile)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:436(_parse_sub)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1683(unary_stream)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1299(__init__)
+       24    0.000    0.000    0.000    0.000 {method 'end' of 're.Match' objects}
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:234(__next)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\stop.py:87(__init__)
+        8    0.000    0.000    0.000    0.000 {built-in method _stat.S_ISDIR}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:826(find_spec)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\contextlib.py:448(_exit_wrapper)
+        3    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1710(getEffectiveLevel)
+        9    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:225(__init__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\prompts\prompt.py:28(lc_attributes)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1070(_SingleThreadedUnaryStreamMultiCallable)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1188(copy_with)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\prompts\prompt.py:74(template_is_valid)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\cookies.py:87(get_new_headers)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1601(_augment_options)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:404(parent)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_compile.py:265(_compile_charset)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\soniox\speech_service.py:95(close)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\prompts\base.py:72(check_valid_template)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1127(_UnaryStreamMultiCallable)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_resources\experimental\completion_config.py:1(<module>)
+        6    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\_distutils_hack\__init__.py:89(find_spec)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1204(wait)
+       40    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:2698(kind)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:3005(parameters)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\codecs.py:94(__new__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\wait.py:126(wait_for_socket)
+       25    0.000    0.000    0.000    0.000 {grpc._cython.cygrpc.build_census_context}
+        3    0.000    0.000    0.000    0.000 {built-in method _winapi.DuplicateHandle}
+        8    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\contextlib.py:452(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\soniox\speech_service.py:101(__exit__)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\http\client.py:883(_get_hostport)
+        6    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\schema.py:175(set_text)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\AppData\Roaming\Python\Python310\site-packages\tornado\gen.py:273(is_coroutine_function)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1714(stream_stream)
+       10    0.000    0.000    0.000    0.000 {method 'seek' of '_io.BytesIO' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\openai_response.py:13(organization)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1370(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1462(__init__)
+        8    0.000    0.000    0.000    0.000 {method 'clear' of 'collections.OrderedDict' objects}
+        6    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+       17    0.000    0.000    0.000    0.000 {built-in method sys.audit}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\enum.py:986(__and__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\utils.py:11(get_from_dict_or_env)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1136(__init__)
+        9    0.000    0.000    0.000    0.000 {method 'count' of 'list' objects}
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.all}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_compile.py:622(_code)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1037(__exit__)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\email\feedparser.py:125(__iter__)
+       20    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:2690(default)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\prompts\base.py:95(to_string)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\urllib\parse.py:418(_checknetloc)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\callbacks\base.py:410(set_handlers)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\retry.py:340(from_int)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\models.py:216(<genexpr>)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:153(lc_serializable)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1628(path_hook_for_FileFinder)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\util\proxy.py:4(connection_requires_http_tunnel)
+        5    0.000    0.000    0.000    0.000 {method 'fileno' of '_socket.socket' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\functools.py:421(_unwrap_partial)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:228(_releaseLock)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\utils.py:575(iter_slices)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\copy.py:243(_keep_alive)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:722(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\soniox\speech_service.py:34(get_api_host)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:551(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:786(processor)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\typing_extensions.py:2192(_is_unpack)
+        5    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connection.py:151(host)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1612(_separate_channel_options)
+       20    0.000    0.000    0.000    0.000 {method 'clear' of 'dict' objects}
+        3    0.000    0.000    0.000    0.000 {method 'intersection' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:216(_lock_unlock_module)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:76(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:740(get_win32)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\base.py:33(_get_verbosity)
+        1    0.000    0.000    0.000    0.000 {built-in method _winapi.GetExitCodeProcess}
+        9    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+        8    0.000    0.000    0.000    0.000 {built-in method sys.getrecursionlimit}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1341(_filter_handle_list)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\urllib3\connectionpool.py:314(_validate_conn)
+       15    0.000    0.000    0.000    0.000 {method 'gettimeout' of '_socket.socket' objects}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\_collections_abc.py:78(_check_methods)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\contextlib.py:446(_create_cb_wrapper)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_compile.py:485(_get_literal_prefix)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\base.py:105(<listcomp>)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1197(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1347(_InitialMetadataFlags)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1365(_ChannelCallState)
+        1    0.000    0.000    0.000    0.000 {built-in method _codecs.charmap_decode}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\threading.py:545(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\soniox\speech_service.py:51(get_api_key)
+        3    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\base.py:50(raise_deprecation)
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of 'PyHKEY' objects}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_compile.py:516(_get_charset_prefix)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:171(__init__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\inspect.py:199(ismethod)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\base.py:104(<listcomp>)
+        1    0.000    0.000    0.000    0.000 {built-in method nt.close}
+        4    0.000    0.000    0.000    0.000 {method 'remove' of 'set' objects}
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:1217(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:436(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:735(get)
+        8    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\adapters.py:401(add_headers)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1704(stream_unary)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1065(get_filename)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:928(fix_flags)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\concurrent\futures\_base.py:400(__get_result)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1379(__del__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\concurrent\futures\_base.py:339(_invoke_callbacks)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:721(_get_machine_win32)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\formatting.py:34(<dictcomp>)
+        1    0.000    0.000    0.000    0.000 D:\GitHub Repos\salespro\speech_player\audio_generator.py:11(__init__)
+        2    0.000    0.000    0.000    0.000 {method 'find' of 'bytearray' objects}
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.iter}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:746(find_spec)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_compile.py:619(isstring)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_requestor.py:436(_validate_headers)
+        8    0.000    0.000    0.000    0.000 {function HTTPResponse.flush at 0x0000027C4EA98C10}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:412(has_location)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\enum.py:1049(<lambda>)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:356(_escape)
+        3    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:1307(disable)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:201(Detach)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1065(__del__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\prompts\base.py:115(lc_serializable)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\openai.py:428(_llm_type)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1749(close)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:874(create_module)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1500(<genexpr>)
+       16    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\copy.py:182(_deepcopy_atomic)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\llm.py:38(lc_serializable)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\brotli\brotli.py:437(flush)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\requests\sessions.py:451(__enter__)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\tenacity\before.py:27(before_nothing)
+        1    0.000    0.000    0.000    0.000 {grpc._cython.cygrpc.fork_register_channel}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\_collections_abc.py:566(__subclasshook__)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:786(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1348(<setcomp>)
+        4    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\prompts\base.py:163(<dictcomp>)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:82(groups)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:112(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:287(tell)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\logging\__init__.py:193(_checkLevel)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1178(poll)
+        3    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chains\base.py:61(set_verbose)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1752(__del__)
+        1    0.000    0.000    0.000    0.000 {built-in method _sre.compile}
+        5    0.000    0.000    0.000    0.000 {method '_is_owned' of '_thread.RLock' objects}
+        2    0.000    0.000    0.000    0.000 {built-in method msvcrt.get_osfhandle}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:164(_path_isdir)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1616(<setcomp>)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\__init__.py:572(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\langchain\chat_models\base.py:45(raise_deprecation)
+        1    0.000    0.000    0.000    0.000 {built-in method sys.exc_info}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\codecs.py:260(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:165(__getitem__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:255(get)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1465(_internal_poll)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        4    0.000    0.000    0.000    0.000 {method 'isalnum' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method msvcrt.open_osfhandle}
+        5    0.000    0.000    0.000    0.000 {function socket.detach at 0x0000027C34F21750}
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_compile.py:477(_get_iscased)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:173(append)
+        6    0.000    0.000    0.000    0.000 {method 'isascii' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:161(__len__)
+        6    0.000    0.000    0.000    0.000 {built-in method _winapi.GetCurrentProcess}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_compression.py:44(create_channel_option)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\experimental\__init__.py:41(UsageError)
+        1    0.000    0.000    0.000    0.000 {grpc._cython.cygrpc.fork_unregister_channel}
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\sre_parse.py:250(match)
+        2    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\typing.py:810(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:237(_cleanup)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\subprocess.py:1034(__enter__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\platform.py:766(_unknown_as_blank)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_requestor.py:50(_requests_proxies_arg)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\experimental\__init__.py:30(ChannelOptions)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\openai\api_resources\experimental\completion_config.py:8(CompletionConfig)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\contextlib.py:530(__enter__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\experimental\__init__.py:59(ExperimentalApiWarning)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\soniox\speech_service.py:98(__enter__)
+        1    0.000    0.000    0.000    0.000 C:\Users\zas47\anaconda3\lib\site-packages\grpc\_channel.py:1657(_process_python_options)
+
+

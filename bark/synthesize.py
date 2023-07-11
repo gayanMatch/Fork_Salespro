@@ -1,7 +1,8 @@
 import time
 import nltk
-from bark.generation import preload_models
-from bark import generate_audio, SAMPLE_RATE
+from generation import preload_models
+from api import generate_audio
+from generation import SAMPLE_RATE
 
 
 
