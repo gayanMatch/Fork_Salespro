@@ -23,7 +23,7 @@ from streamlit_chat import message
 import copy
 import pygame
 PICOVOICE_API_KEY = "SoMf0xO/J9PWWRHb3HSTHxDwiGY0RDbPebuEoJlZE/MuIecCZuGaqQ=="
-os.environ['OPENAI_API_KEY'] = "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"
+os.environ['OPENAI_API_KEY'] = "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"
 
 # Caching the responses in LLM memory
 langchain.llm_cache = InMemoryCache()

@@ -24,7 +24,7 @@ import langchain
 import pygame
 from pydub import AudioSegment
 from speech_player.audio_generator import AudioPlayer
-
+import time 
 # load environment variables
 load_dotenv(dotenv_path="configs/.env", override=True, verbose=True)
 
@@ -65,7 +65,7 @@ def play_agent_response_bark(text: str, player):
 
 def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model_id: str = "eleven_monolingual_v1",
                         optimize_streaming_latency: int = 1):
-
+    start_time = time.time()
     global agent_is_speaking
 
     print(f"Playing agent response: {text}")
@@ -91,6 +91,8 @@ def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model
         base_size = 5 * 128 * 1024 // 32
         size = base_size
         chunk_point = 0
+        end_time = time.time()
+        print('eleven labs Time Difference: ', end_time - start_time)
         for chunk in response.iter_content(chunk_size=size):
             if chunk:
                 audio_data.write(chunk)
@@ -162,12 +164,13 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
         while count != max_num_turns:
             # Agent speaks
             count += 1
+            agent_start_time = time.time()
             sales_agent.step()
             agent_response = sales_agent.conversation_history[-1].replace('<END_OF_TURN>', '')
-            if audio_player_model == 'bark':
-                play_agent_response_bark(agent_response, audio_player)
-            else:
-                play_agent_response(agent_response)
+            agent_end_time = time.time()
+            print('*'*50)
+            print("Agent Response Time Difference", agent_end_time - agent_start_time)
+            print('*'*50)
 
             if model_name == 'soniox_microphone' or model_name == 'soniox':
                 # User speaks
@@ -198,9 +201,9 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
                 stream = audio.open(format=FORMAT, channels=CHANNELS, rate=RATE, input=True, frames_per_buffer=CHUNK_SIZE)
 
                 try:
-                    print("Agent response:", agent_response)
                     if audio_player_model == 'bark':
                         play_agent_response_bark(agent_response, audio_player)
+                        print('*'*50)
                     else:
                         play_agent_response(agent_response)
 
@@ -212,6 +215,7 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
 
                     is_endpoint = False
                     start_time = time.time()
+                    pico_start_time = time.time()
                     duration = 3  # Duration in seconds
 
                     while not is_endpoint and time.time() - start_time <= duration:
@@ -224,10 +228,11 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
                         if partial_transcript:
                             print(f"Transcribing: {partial_transcript}", end='\r')
                             transcript += partial_transcript
-
+                    pico_end_time = time.time()
+                    print('Picovoice Time Difference: ', pico_end_time - pico_start_time)
+                    print('*'*50)
                     # Send the transcribed text after the specified duration
                     sales_agent.human_step(transcript.strip())
-                    print(f"User input sent to agent: {transcript.strip()}")
 
                     # Reset the transcript to an empty string at the end of the loop
                     transcript = ""
