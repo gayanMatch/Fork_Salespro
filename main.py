@@ -151,7 +151,7 @@ def transcribe_audio_stream_using_cheetah(audio_chunk):
 
 def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: int = 8000, audio_player_model: str = 'bark'):
     # Initialize the agent
-    llm = ChatOpenAI(temperature=0.9)
+    llm = llm=ChatOpenAI(temperature=0.9, model_name="gpt-3.5-turbo", streaming=True)
     sales_agent = SalesGPT.from_llm(llm)
     audio_player = AudioPlayer()
     DURATION = duration
@@ -268,7 +268,7 @@ if __name__ == "__main__":
         cheetah = pvcheetah.create(access_key=PICOVOICE_API_KEY)
 
     # Call the function you want to profile
-    main(model_name=args.model_name, duration=args.duration, sample_rate=args.sample_rate)
+    main(model_name=args.model_name, duration=args.duration, sample_rate=args.sample_rate, audio_player_model=args.audio_player)
 
     # Stop the profiler
     profiler.disable()
