@@ -105,7 +105,7 @@ def play_agent_response(text: str, voice_id: str = "pNInz6obpgDQGcFmaJgB", model
         else:
             data = copy.copy(audio_data)
             data.seek(chunk_point)
-            play_mp3_chunk(BytesIO(data.read()), 4096)
+            play_mp3_chunk(BytesIO(data.read()), 2048)
             chunk_point += size
             size += base_size
     else:
@@ -149,9 +149,19 @@ def transcribe_audio_stream_using_cheetah(audio_chunk):
     return partial_transcript, is_endpoint
 
 
+
+import threading
+import pygame
+
+def play_mp3(file_path):
+    pygame.mixer.init()
+    pygame.mixer.music.load(file_path)
+    pygame.mixer.music.play()
+
+
 def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: int = 8000, audio_player_model: str = 'bark'):
     # Initialize the agent
-    llm = ChatOpenAI(temperature=0.9)
+    llm = llm=ChatOpenAI(temperature=0.9, model_name="gpt-3.5-turbo", streaming=True)
     sales_agent = SalesGPT.from_llm(llm)
     audio_player = AudioPlayer()
     DURATION = duration
@@ -162,6 +172,7 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
         max_num_turns = 4
 
         while count != max_num_turns:
+            iteration_time = 0 
             # Agent speaks
             count += 1
             agent_start_time = time.time()
@@ -170,6 +181,7 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
             agent_end_time = time.time()
             print('*'*50)
             print("Agent Response Time Difference", agent_end_time - agent_start_time)
+            iteration_time += (agent_end_time - agent_start_time)
             print('*'*50)
 
             if model_name == 'soniox_microphone' or model_name == 'soniox':
@@ -217,7 +229,9 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
                     start_time = time.time()
                     pico_start_time = time.time()
                     duration = 3  # Duration in seconds
-
+                    # Create and start the thread
+                    hello_thread = threading.Thread(target=play_mp3, args=('data/hmmmm.mp3',))
+                    flag = 0 
                     while not is_endpoint and time.time() - start_time <= duration:
                         buffer = stream.read(CHUNK_SIZE, exception_on_overflow=False)
                         audio_data = np.frombuffer(buffer, dtype=np.int16)
@@ -228,8 +242,13 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
                         if partial_transcript:
                             print(f"Transcribing: {partial_transcript}", end='\r')
                             transcript += partial_transcript
+                        if (time.time()-start_time)>2.5 and flag == 0:
+                            hello_thread.start()
+                            hello_thread.join()
+                            flag = 1
                     pico_end_time = time.time()
                     print('Picovoice Time Difference: ', pico_end_time - pico_start_time)
+                    iteration_time += (pico_end_time - pico_start_time)
                     print('*'*50)
                     # Send the transcribed text after the specified duration
                     sales_agent.human_step(transcript.strip())
@@ -239,11 +258,13 @@ def main(model_name: str = 'soniox_microphone', duration: int = 3, sample_rate: 
 
                     # Allow the Python garbage collector to clean up the Cheetah ASR object
                     cheetah = None
-
                 finally:
                     stream.stop_stream()
                     stream.close()
                     audio.terminate()
+            print('x'*50)
+            print('Iteration Time: ', iteration_time)
+            print('x'*50)
 
             if '<END_OF_CALL>' in agent_response:
                 print('Sales Agent determined it is time to end the conversation.')
@@ -268,7 +289,7 @@ if __name__ == "__main__":
         cheetah = pvcheetah.create(access_key=PICOVOICE_API_KEY)
 
     # Call the function you want to profile
-    main(model_name=args.model_name, duration=args.duration, sample_rate=args.sample_rate)
+    main(model_name=args.model_name, duration=args.duration, sample_rate=args.sample_rate, audio_player_model=args.audio_player)
 
     # Stop the profiler
     profiler.disable()
